@@ -56,8 +56,8 @@ class KG_KGE(nn.Module):
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
         embed.requires_grad = self.requires_grad 
         # print('key = ', key)
-        print(key, 'embed = ', embed.weight.shape)
-        print('embed.requires_grad = ', embed.requires_grad)
+        # print(key, 'embed = ', embed.weight.shape)
+        # print('embed.requires_grad = ', embed.requires_grad)
         return embed
 
     def _relation_embedding(self, key): 
@@ -70,7 +70,7 @@ class KG_KGE(nn.Module):
 
         weight = torch.randn(1, self.embed_size, requires_grad=True)
         embed = nn.Parameter(weight[:,:self.embed_size])
-        print(key, 'embed = ', embed.shape)
+        # print(key, 'embed = ', embed.shape)
         embed.requires_grad = self.requires_grad
 
         return embed
@@ -175,8 +175,8 @@ class RW_KGE(nn.Module):
 
         embed.requires_grad = self.requires_grad
         # print(key, 'key = ', key)
-        print(key,'embed = ', embed.weight.shape)
-        print('embed.requires_grad = ', embed.requires_grad)
+        # print(key,'embed = ', embed.weight.shape)
+        # print('embed.requires_grad = ', embed.requires_grad)
         return embed
 
     def _relation_embedding(self, key): 
@@ -184,7 +184,7 @@ class RW_KGE(nn.Module):
         # print('key = ', key)
         weight = torch.randn(1, self.embed_size, requires_grad=True)
         embed = nn.Parameter(weight[:,:self.embed_size])
-        print(key, 'embed = ', embed.shape)
+        # print(key, 'embed = ', embed.shape)
         embed.requires_grad = self.requires_grad
 
         return embed

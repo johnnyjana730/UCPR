@@ -346,13 +346,17 @@ if __name__ == '__main__':
 
     best_recall = 0
     epo = 10
-    while True:
-        args.eva_epochs = epo
-        best_recall = test(args, train_labels, test_labels, best_recall)  
-        epo += 20
+
+    try:
+        while True:
+            args.eva_epochs = epo
+            best_recall = test(args, train_labels, test_labels, best_recall)  
+            epo += 20
+    except:
+        pass
 
     args.eva_epochs = args.best_model_epoch
-    test(train_labels, test_labels, best_recall, pretest = 0)
+    test(args, train_labels, test_labels, best_recall, pretest = 0)
 
     # save pretrained md
     if args.model == 'lstm' and args.save_pretrain_model == True:
