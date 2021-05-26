@@ -13,7 +13,7 @@ then
     n_memory=64
     p_hop=2
     reasoning_step=2
-    embed_size=32
+    embed_size=16
 elif [ $2 = "bu" ]
 then
     dataset_name='beauty_core'
@@ -24,7 +24,7 @@ then
     n_memory=64
     p_hop=2
     reasoning_step=2
-    embed_size=32
+    embed_size=16
 elif [ $2 = "cl" ]
 then
     dataset_name='cloth_core'
@@ -35,7 +35,7 @@ then
     n_memory=32
     p_hop=2
     reasoning_step=2
-    embed_size=32
+    embed_size=16
 fi
 
 epochs=20
