@@ -59,12 +59,12 @@ class KG_KGE_pretrained(nn.Module):
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
         embed.weight.data = torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0)[:,:self.embed_size])
         embed.requires_grad = self.requires_grad 
-        print('key = ', key)
-        print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
-        print('vocab_size + 1 = ', vocab_size + 1)
+        # print('key = ', key)
+        # print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
+        # print('vocab_size + 1 = ', vocab_size + 1)
 
-        print('embed = ', embed.weight.shape)
-        print('embed.requires_grad = ', embed.requires_grad)
+        # print('embed = ', embed.weight.shape)
+        # print('embed.requires_grad = ', embed.requires_grad)
 
         return embed
 
@@ -81,11 +81,11 @@ class KG_KGE_pretrained(nn.Module):
         if key != SELF_LOOP and key != 'padding':
             # print('self.embeds[key][0]) = ', self.embeds[key][0].shape)
             embed = nn.Parameter(torch.from_numpy(np.expand_dims(self.embeds[key][0], axis=0)[:,:self.embed_size]))
-            print(key, 'embed = ', embed.shape)
+            # print(key, 'embed = ', embed.shape)
         else:
             weight = torch.randn(1, self.embed_size, requires_grad=True)
             embed = nn.Parameter(weight[:,:self.embed_size])
-            print(key, 'embed = ', embed.shape)
+            # print(key, 'embed = ', embed.shape)
         embed.requires_grad = self.requires_grad
 
         return embed
@@ -190,21 +190,21 @@ class RW_KGE_pretrained(nn.Module):
         """
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
 
-        print('self.embeds[key] = ', self.embeds[key].shape)
+        # print('self.embeds[key] = ', self.embeds[key].shape)
         # input()
 
         weight = np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0)[:,:self.embed_size]
-        print('weight = ', weight.shape)
+        # print('weight = ', weight.shape)
         numpy_data = torch.from_numpy(weight)
         numpy_data.requires_grad = self.requires_grad
         embed.weight.data = numpy_data
-        print('key = ', key)
-        print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
-        print('vocab_size + 1 = ', vocab_size + 1)
+        # print('key = ', key)
+        # print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
+        # print('vocab_size + 1 = ', vocab_size + 1)
         embed.requires_grad = self.requires_grad
 
-        print('embed = ', embed.weight.shape)
-        print('embed.requires_grad = ', embed.requires_grad)
+        # print('embed = ', embed.weight.shape)
+        # print('embed.requires_grad = ', embed.requires_grad)
 
         return embed
 
@@ -215,11 +215,11 @@ class RW_KGE_pretrained(nn.Module):
         if key != SELF_LOOP and key != 'padding':
             # print('self.embeds[key][0]) = ', self.embeds[key][0].shape)
             embed = nn.Parameter(torch.from_numpy(np.expand_dims(self.embeds[key][0], axis=0)[:,:self.embed_size]))
-            print(key, 'embed = ', embed.shape)
+            # print(key, 'embed = ', embed.shape)
         else:
             weight = torch.randn(1, self.embed_size, requires_grad=True)
             embed = nn.Parameter(weight[:,:self.embed_size])
-            print(key, 'embed = ', embed.shape)
+            # print(key, 'embed = ', embed.shape)
         embed.requires_grad = self.requires_grad
 
         return embed

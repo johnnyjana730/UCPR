@@ -27,11 +27,12 @@ then
     embed_size=32
 fi
 
-epochs=20
+epochs=400
 KGE_pretrained=1
 kg_emb_grad=1
 
 load_pretrain_model=0
+save_pretrain_model=1
 batch_size=32
 
 exp_name=ld${lambda_num}_rn${reasoning_step}_h1${p_hop}_nmem${n_memory}_em${embed_size}
@@ -44,7 +45,7 @@ echo "Executing $cmd"
 $cmd
 
 cmd="python3 ../src/${test_file} --name ${exp_name} --batch_size ${batch_size}\
-  --gp_setting ${gp_setting}  --model lstm --dataset ${dataset_name} \
+  --gp_setting ${gp_setting}  --model lstm --dataset ${dataset_name} --save_pretrain_model ${save_pretrain_model}  \
   --lambda_num ${lambda_num}  --kg_emb_grad ${kg_emb_grad} --lr ${lr} --p_hop ${p_hop} --reasoning_step ${reasoning_step} --embed_size ${embed_size} --n_memory ${n_memory}"
 echo "Executing $cmd"
 $cmd
@@ -52,7 +53,7 @@ $cmd
 load_pretrain_model=1
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
-   --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} \
+   --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} --KGE_pretrained ${KGE_pretrained} \
    --load_pretrain_model ${load_pretrain_model} --gp_setting ${gp_setting} --epochs ${epochs} \
     --lambda_num ${lambda_num} --kg_emb_grad ${kg_emb_grad}  --p_hop ${p_hop} --reasoning_step ${reasoning_step} --model ${model} --dataset ${dataset_name}"
 echo "Executing $cmd"

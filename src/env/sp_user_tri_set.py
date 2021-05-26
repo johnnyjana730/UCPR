@@ -110,7 +110,7 @@ def rw_get_user_triplet_set(args, kg, user_list, p_hop, n_memory):
     with mp.Pool(processes=min(mp.cpu_count(), 4)) as pool:
         job = partial(_rw_get_user_triplet_set, p_hop=max(1,args_tmp['p_hop']), KG_RELATION = KG_RELATION, n_memory=args_tmp['n_memory'], n_neighbor=16)
         for u, u_r_set in pool.starmap(job, user_history_dict.items()):
-            print(' u, u_r_set  = ',  u, u_r_set)
+            # print(' u, u_r_set  = ',  u, u_r_set)
             user_triplet_set[u] = u_r_set
 
 

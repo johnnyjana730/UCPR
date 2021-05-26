@@ -117,7 +117,10 @@ class BatchKGEnvironment(object):
                 self.user_triplet_set = pickle.load(fp)
             print('load user_triplet_path = ', user_triplet_path)
         else:
-            self.user_triplet_set = self.get_user_triplet(self.args, self.kg, self.user_list, self.p_hop, self.n_memory)
+            if self.args.envir == 'p1':
+                self.user_triplet_set = self.get_user_triplet(self.args, self.kg, self.user_list, self.p_hop, self.n_memory)
+            else:
+                self.user_triplet_set = self.get_user_triplet(self.args, self.kg, self.et_idx2ty, self.user_list, self.p_hop, self.n_memory)
             with open(user_triplet_path, 'wb') as fp:
                 pickle.dump(self.user_triplet_set, fp)
             print('user_triplet_set_path save = ', user_triplet_path)

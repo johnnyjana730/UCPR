@@ -355,7 +355,7 @@ if __name__ == '__main__':
     test(train_labels, test_labels, best_recall, pretest = 0)
 
     # save pretrained md
-    if args.model == 'lstm':
+    if args.model == 'lstm' and args.save_pretrain_model == True:
         best_model_json = {}
         best_model_json['pretrained_file'] = args.best_save_model_dir
         with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt', 'w') as outfile:

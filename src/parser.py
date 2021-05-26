@@ -28,9 +28,14 @@ def parse_args():
     parser.add_argument('--reasoning_step', type=int, default=3, help='weight factor for entropy loss')
     parser.add_argument('--pretrained_st_epoch', type=int, default=0, help='h0_embbed')
 
+    parser.add_argument('--att_core', type=int, default=0, help='h0_embbed')
+    parser.add_argument('--user_core_th', type=int, default=6, help='h0_embbed')
+
+
     parser.add_argument('--embed_size', type=int, default=50, help='knowledge embedding size.')
     parser.add_argument('--act_dropout', type=float, default=0.5, help='action dropout rate.')
     parser.add_argument('--state_history', type=int, default=1, help='state history length')
+
     parser.add_argument('--hidden', type=int, nargs='*', default=[64, 32], help='number of samples')
     parser.add_argument('--gradient_plot',  type=str, default='gradient_plot/', help='number of negative samples.')
 
@@ -46,10 +51,10 @@ def parse_args():
     parser.add_argument('--att_evaluation', type=int, default=0, help='att_evaluation')
     parser.add_argument('--state_rg', type=int, default=0, help='state_require_gradient')
     parser.add_argument('--kg_emb_grad', type=int, default=0, help='if kg_emb_grad')
+    parser.add_argument('--save_pretrain_model', type=int, default=0, help='save_pretrain_model')
 
     parser.add_argument('--tri_wd_rm', type=int, default=0, help='tri_wd_rm')
     parser.add_argument('--tri_pro_rm', type=int, default=0, help='tri_pro_rm')
-
 
     parser.add_argument('--l2_weight', type=float, default=1e-6, help='weight of the l2 regularization term')
 
@@ -94,6 +99,7 @@ def parse_args():
     args.kg_emb_grad = (args.kg_emb_grad == 1)
 
     args.pretest = (args.pretest == 1)
+    args.save_pretrain_model = (args.save_pretrain_model == 1)
 
     args.tri_wd_rm = (args.tri_wd_rm == 1)
     args.tri_pro_rm = (args.tri_pro_rm == 1)
