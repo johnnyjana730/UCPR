@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 export CUDA_VISIBLE_DEVICES=$1
-# export CUDA_LAUNCH_BLOCKING=1
-
 export PYTHONPATH="../"
 
 
@@ -36,10 +34,9 @@ fi
 batch_size=1024
 model=baseline
 
-epochs=20
+epochs=200
 KGE_pretrained=1
-kg_emb_grad=1
-
+kg_emb_grad=0
 exp_name=baseline
 
 cmd="python3 ../src/${train_file} --batch_size ${batch_size} --name ${exp_name}  \

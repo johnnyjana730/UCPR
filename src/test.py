@@ -362,5 +362,7 @@ if __name__ == '__main__':
     if args.model == 'lstm' and args.save_pretrain_model == True:
         best_model_json = {}
         best_model_json['pretrained_file'] = args.best_save_model_dir
+        print('best_model_json = ', best_model_json)
+        print(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt')
         with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt', 'w') as outfile:
             json.dump(best_model_json, outfile)

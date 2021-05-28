@@ -104,7 +104,7 @@ def parse_args():
     args.tri_wd_rm = (args.tri_wd_rm == 1)
     args.tri_pro_rm = (args.tri_pro_rm == 1)
 
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
+    # os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
     args.device = torch.device('cuda:0') if torch.cuda.is_available() else 'cpu'
 
 

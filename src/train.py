@@ -27,7 +27,8 @@ def pretrain_set(args, env):
         logger = get_logger(args.log_dir + '/train_log_pretrain.txt')
         args.logger = logger
 
-        with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt', 'w') as json_file:
+        print(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt')
+        with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt') as json_file:
             best_model_json = json.load(json_file)
 
         policy_file = best_model_json['pretrained_file']

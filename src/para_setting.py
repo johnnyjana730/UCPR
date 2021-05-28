@@ -113,9 +113,9 @@ def parameter_path_th(args):
     if not os.path.isdir(args.save_model_dir):
         os.makedirs(args.save_model_dir)
 
-    log_dir_fodder_rw = f'g_aiu_{args.att_core}_{args.item_core}_{args.user_core}'
+    # log_dir_fodder_rw = f'g_aiu_{args.att_core}_{args.item_core}_{args.user_core}'
 
-    args.pretrained_dir = '{}/{}/{}'.format(EVALUATION[args.dataset], 'pretrained', log_dir_fodder_rw)
+    args.pretrained_dir = '{}/{}/{}'.format(EVALUATION[args.dataset], 'pretrained', 'emb_szie_' + str(args.embed_size))
     if not os.path.isdir(args.pretrained_dir):
         os.makedirs(args.pretrained_dir)
 

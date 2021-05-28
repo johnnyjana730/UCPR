@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-export CUDA_VISIBLE_DEVICES=$1
-export PYTHONPATH="."
-
-
 export train_file="train.py"
 export test_file="test.py"
 
 
-file_name="UCPR_p1.sh"
+# file_name="UCPR_p1_2.sh"
 
 # data=bu
 # bash qs/mf_rn_nogd/${file_name} $1 $data &
