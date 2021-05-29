@@ -44,9 +44,9 @@ kg_emb_grad=0
 batch_size=32
 
 tri_wd_rm=0
-tri_pro_rm=0
+tri_pro_rm=1
 load_pretrain_model=0
-exp_name=rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}_${embed_size}_${load_pretrain_model=1}
+exp_name=nopre_rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}_${embed_size}_${load_pretrain_model}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
     --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory}  --tri_wd_rm ${tri_wd_rm} --tri_pro_rm ${tri_pro_rm} --KGE_pretrained ${KGE_pretrained} \

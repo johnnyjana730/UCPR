@@ -49,25 +49,25 @@ save_pretrain_model=1
 
 exp_name=lstm_${epochs}_${lr}_save_emb_${embed_size}
 
-cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name}  \
-   --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} \
-   --load_pretrain_model ${load_pretrain_model}  --gp_setting ${gp_setting} --epochs ${epochs} --KGE_pretrained ${KGE_pretrained} \
-    --lambda_num ${lambda_num} --kg_emb_grad ${kg_emb_grad} --p_hop ${p_hop} --reasoning_step ${reasoning_step} --model lstm --dataset ${dataset_name}"
-echo "Executing $cmd"
-$cmd
+# cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name}  \
+#    --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} \
+#    --load_pretrain_model ${load_pretrain_model}  --gp_setting ${gp_setting} --epochs ${epochs} --KGE_pretrained ${KGE_pretrained} \
+#     --lambda_num ${lambda_num} --kg_emb_grad ${kg_emb_grad} --p_hop ${p_hop} --reasoning_step ${reasoning_step} --model lstm --dataset ${dataset_name}"
+# echo "Executing $cmd"
+# $cmd
 
-cmd="python3 ../src/${test_file} --name ${exp_name} --batch_size ${batch_size} \
-  --gp_setting ${gp_setting}  --model lstm --dataset ${dataset_name} --save_pretrain_model ${save_pretrain_model} \
-  --lambda_num ${lambda_num}  --kg_emb_grad ${kg_emb_grad}  --lr ${lr} --p_hop ${p_hop} --reasoning_step ${reasoning_step} --embed_size ${embed_size} --n_memory ${n_memory}"
-echo "Executing $cmd"
-$cmd
+# cmd="python3 ../src/${test_file} --name ${exp_name} --batch_size ${batch_size} \
+#   --gp_setting ${gp_setting}  --model lstm --dataset ${dataset_name} --save_pretrain_model ${save_pretrain_model} \
+#   --lambda_num ${lambda_num}  --kg_emb_grad ${kg_emb_grad}  --lr ${lr} --p_hop ${p_hop} --reasoning_step ${reasoning_step} --embed_size ${embed_size} --n_memory ${n_memory}"
+# echo "Executing $cmd"
+# $cmd
 
 
 lr=0.5e-04
 tri_wd_rm=0
 tri_pro_rm=0
 load_pretrain_model=1
-exp_name=rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}_${embed_size}_${load_pretrain_model=1}
+exp_name=grad_rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}_${embed_size}_${load_pretrain_model}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
     --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory}  --tri_wd_rm ${tri_wd_rm} --tri_pro_rm ${tri_pro_rm} --KGE_pretrained ${KGE_pretrained} \

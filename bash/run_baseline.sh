@@ -5,18 +5,18 @@ export test_file="test.py"
 
 file_name="baseline.sh"
 
-data=bu
-bash qs/baseline/${file_name} $1 $data &
-
-data=cl
-bash qs/baseline/${file_name} $1 $data &
-
-data=cell
-bash qs/baseline/${file_name} $1 $data &
-
-# data=az
+# data=bu
 # bash qs/baseline/${file_name} $1 $data &
 
-# data=mv
+# data=cl
 # bash qs/baseline/${file_name} $1 $data &
+
+# data=cell
+# bash qs/baseline/${file_name} $1 $data &
+
+data=az
+bash qs/baseline/${file_name} $1 $data &
+
+data=mv
+bash qs/baseline/${file_name} $1 $data &
 

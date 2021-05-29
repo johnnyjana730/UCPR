@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from utils import EVALUATION, SAVE_MODEL_DIR, get_logger
+from utils import EVALUATION, EVALUATION_2, SAVE_MODEL_DIR, get_logger
 
 def parameter_path(args):
     if args.gp_setting == '6000_800_15_500_50':
@@ -66,7 +66,7 @@ def parameter_path(args):
 
     log_dir_fodder = f'{args.name}_g_aiu_{args.att_core}_{args.item_core}_{args.user_core}'
 
-    args.log_dir = '{}/{}/{}'.format(EVALUATION[args.dataset], args.model, log_dir_fodder)
+    args.log_dir = '{}/{}/{}'.format(EVALUATION_2[args.dataset], args.model, log_dir_fodder)
     if not os.path.isdir(args.log_dir):
         os.makedirs(args.log_dir)
 
@@ -105,7 +105,7 @@ def parameter_path_th(args):
 
     log_dir_fodder = f'{args.name}_g_aiu_{args.att_core}_{args.item_core}_{args.user_core}'
 
-    args.log_dir = '{}/{}/{}'.format(EVALUATION[args.dataset], args.model, log_dir_fodder)
+    args.log_dir = '{}/{}/{}'.format(EVALUATION_2[args.dataset], args.model, log_dir_fodder)
     if not os.path.isdir(args.log_dir):
         os.makedirs(args.log_dir)
 

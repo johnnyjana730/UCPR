@@ -118,8 +118,8 @@ def parse_args():
         # if args.KGE_pretrained == True: args.embed_size = 50
 
     if args.dataset in [BEAUTY_CORE, CELL_CORE, CLOTH_CORE]: 
-        args.topk = [10, 10, 1]
-        args.topk_list = [1, 10, 100, 100]
+        args.topk = [10, 15, 1]
+        args.topk_list = [1, 10, 150, 100]
 
     elif args.dataset == MOVIE_CORE:
         args.topk = [8, 3, 4]

@@ -9,33 +9,35 @@ then
     model='UCPR'
     gp_setting="6000_800_15_500_50"
     lr=2e-04
-    lambda_num=2.0
+    lambda_num=0.2
     n_memory=64
     p_hop=2
-    reasoning_step=4
+    reasoning_step=3
     embed_size=32
+    kg_emb_grad=1
+
 elif [ $2 = "mv" ]
 then
     dataset_name='MovieLens-1M_core'
     model='UCPR'
     gp_setting="6000_800_15_500_50"
     lr=2e-04
-    lambda_num=0.2
+    lambda_num=2.0
     n_memory=64
     p_hop=2
-    reasoning_step=3
+    reasoning_step=4
     embed_size=32
+    kg_emb_grad=0
 fi
 
-epochs=400
+epochs=600
 KGE_pretrained=1
-kg_emb_grad=1
 
 load_pretrain_model=0
 save_pretrain_model=1
 batch_size=32
 
-exp_name=lstm_${epochs}_${lr}_save_emb_${embed_size}
+exp_name=lstm_${epochs}_${lr}_save_emb_${embed_size}_kge${kg_emb_grad}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
    --lr ${lr} --embed_size ${embed_size} --n_memory ${n_memory}  \
@@ -52,7 +54,7 @@ $cmd
 
 
 lr=0.6e-04
-exp_name=${lambda_num}_rn${reasoning_step}_h1${p_hop}_nmem${n_memory}_${lr}_em${embed_size}
+exp_name=${lambda_num}_rn${reasoning_step}_h1${p_hop}_nmem${n_memory}_${lr}_em${embed_size}_kge${kg_emb_grad}
 load_pretrain_model=1
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \

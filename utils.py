@@ -49,7 +49,13 @@ EVALUATION = {
     AZ_BOOK_CORE: '../eva/amazon-book_20core'
 }
 
-
+EVALUATION_2 = {
+    BEAUTY_CORE: '../eva_2/Amazon_Beauty_Core',
+    CELL_CORE: '../eva_2/Amazon_Cellphones_Core',
+    CLOTH_CORE: '../eva_2/Amazon_Clothing_Core',
+    MOVIE_CORE: '../eva_2/MovieLens-1M_Core',
+    AZ_BOOK_CORE: '../eva_2/amazon-book_20core'
+}
 
 CASE_ST = {
     BEAUTY_CORE: '../cast_st/Amazon_Beauty_Core',

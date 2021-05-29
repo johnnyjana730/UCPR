@@ -22,6 +22,19 @@ import json
 
 SavedAction = namedtuple('SavedAction', ['log_prob', 'value'])
 
+
+# print('args.load_pretrain_model == True')
+# policy_file = args.save_model_dir_tmp + '/policy_model_epoch_{}.ckpt'.format(args.pretrained_st_epoch)
+# pretrain_sd = torch.load(policy_file)
+# model = Memory_Model(args, env.user_triplet_set, env.rela_2_index, 
+#                         env.act_dim, gamma=args.gamma, hidden_sizes=args.hidden).to(args.device)
+# model_sd = model.state_dict()
+# pretrain_sd = {k: v for k, v in pretrain_sd.items() if k in model_sd}
+# para_meter = [k.split('.')[0] for k, v in pretrain_sd.items()]
+
+# model_sd.update(pretrain_sd)
+# model.load_state_dict(model_sd)
+
 def pretrain_set(args, env):
     if args.load_pretrain_model == True:    
         logger = get_logger(args.log_dir + '/train_log_pretrain.txt')
@@ -31,12 +44,47 @@ def pretrain_set(args, env):
         with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt') as json_file:
             best_model_json = json.load(json_file)
 
+
         policy_file = best_model_json['pretrained_file']
         pretrain_sd = torch.load(policy_file)
         model = Memory_Model(args, env.user_triplet_set, env.rela_2_index, env.act_dim, gamma=args.gamma, hidden_sizes=args.hidden).to(args.device)
         model_sd = model.state_dict()
+
+        pretrain_sd = {k: v for k, v in pretrain_sd.items() if k in model_sd}
+        para_meter = [k.split('.')[0] for k, v in pretrain_sd.items()]
+
         model_sd.update(pretrain_sd)
         model.load_state_dict(model_sd)
+
+
+        for name, child in model.named_children():
+            print('name = ', name)
+            for param in child.parameters():
+                param.requires_grad = True
+
+        if args.dataset in [BEAUTY_CORE, CELL_CORE, CLOTH_CORE]:         
+            for name, child in model.named_children():
+                print('name = ', name)
+                if 'kg' in name:
+                    print('name = ', name)
+                    for param in child.parameters():
+                        param.requires_grad = False
+        elif args.dataset == MOVIE_CORE:
+            for name, child in model.named_children():
+                print('name = ', name)
+                if name in para_meter and 'kg' not in name and 'actor' not in name and 'critic' not in name:
+                    print('name = ', name)
+                    for param in child.parameters():
+                        param.requires_grad = False
+
+        grad_string = ''
+        for name, child in model.named_children():
+            print('name = ', name)
+            for param in child.parameters():
+                print(param.requires_grad)
+            grad_string += ' name = ' + name  + ' ' + str(param.requires_grad)
+
+        logger.info(grad_string)
         # start_epoch = args.pretrained_st_epoch + 1
 
     else:
