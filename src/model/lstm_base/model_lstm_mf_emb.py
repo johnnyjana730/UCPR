@@ -45,7 +45,12 @@ class AC_lstm_mf_dummy(nn.Module):
 
         elif self.args.envir == 'p2':
             self._get_next_node_type = self._get_next_node_type_graph
-            if self.args.KGE_pretrained == True: self.kg_emb = KG_KGE_pretrained(args)
+            if self.args.KGE_pretrained == True: 
+                # if  self.args.dataset == MOVIE_CORE:
+                #     self.kg_emb = KnowledgeEmbedding_memory_graph(args)
+                # else:
+                    # self.kg_emb = KG_KGE_pretrained(args)
+                self.kg_emb = KG_KGE_pretrained(args)
             else:  self.kg_emb = KG_KGE(args)
 
             dataset = load_dataset(args.dataset)

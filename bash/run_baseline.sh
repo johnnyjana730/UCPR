@@ -3,7 +3,7 @@
 export train_file="train.py"
 export test_file="test.py"
 
-file_name="baseline.sh"
+file_name="lstm.sh"
 
 # data=bu
 # bash qs/baseline/${file_name} $1 $data &

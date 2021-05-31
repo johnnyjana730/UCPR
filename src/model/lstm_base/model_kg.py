@@ -54,7 +54,7 @@ class KG_KGE(nn.Module):
             Note that last dimension is always 0's.
         """
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
-        embed.requires_grad = self.requires_grad 
+        embed.weight.requires_grad = self.requires_grad
         # print('key = ', key)
         # print(key, 'embed = ', embed.weight.shape)
         # print('embed.requires_grad = ', embed.requires_grad)
@@ -79,7 +79,7 @@ class KG_KGE(nn.Module):
         """Create relation bias of size [vocab_size+1]."""
         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
-        bias.requires_grad = self.requires_grad
+        # bias.requires_grad = self.requires_grad
         return bias
 
     def _make_distrib(self, distrib):
@@ -172,8 +172,10 @@ class RW_KGE(nn.Module):
         """
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
 
+        embed.weight.requires_grad = self.requires_grad
+        # embed.requires_grad = self.requires_grad
 
-        embed.requires_grad = self.requires_grad
+
         # print(key, 'key = ', key)
         # print(key,'embed = ', embed.weight.shape)
         # print('embed.requires_grad = ', embed.requires_grad)
@@ -193,7 +195,7 @@ class RW_KGE(nn.Module):
         """Create relation bias of size [vocab_size+1]."""
         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
-        bias.requires_grad = self.requires_grad
+        # bias.requires_grad = self.requires_grad
         return bias
 
 

@@ -71,7 +71,7 @@ KGE_pretrained=1
 load_pretrain_model=0
 save_pretrain_model=0
 
-exp_name=lstm_${epochs}_${lr}
+exp_name=lstm_${epochs}_${lr}_2
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name}  \
    --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} \

@@ -52,6 +52,7 @@ def parse_args():
     parser.add_argument('--state_rg', type=int, default=0, help='state_require_gradient')
     parser.add_argument('--kg_emb_grad', type=int, default=0, help='if kg_emb_grad')
     parser.add_argument('--save_pretrain_model', type=int, default=0, help='save_pretrain_model')
+    parser.add_argument('--mv_test', type=int, default=0, help='mv_test')
 
     parser.add_argument('--tri_wd_rm', type=int, default=0, help='tri_wd_rm')
     parser.add_argument('--tri_pro_rm', type=int, default=0, help='tri_pro_rm')
@@ -97,6 +98,7 @@ def parse_args():
     args.state_rg = (args.state_rg == 1)
     args.load_pt_emb_size = (args.load_pt_emb_size == 1)
     args.kg_emb_grad = (args.kg_emb_grad == 1)
+    args.mv_test = (args.mv_test == 1)
 
     args.pretest = (args.pretest == 1)
     args.save_pretrain_model = (args.save_pretrain_model == 1)
@@ -122,8 +124,17 @@ def parse_args():
         args.topk_list = [1, 10, 150, 100]
 
     elif args.dataset == MOVIE_CORE:
-        args.topk = [8, 3, 4]
-        args.topk_list = [1, 8, 24, 96]        
+        if args.mv_test == True:
+            args.topk = [8, 3, 4]
+            args.topk_list = [1, 8, 24, 96]        
+        else:
+            args.topk = [8, 3, 4]
+            args.topk_list = [1, 8, 24, 96]
+
+            # args.topk = [10, 10, 1]
+            # args.topk_list = [1, 10, 100, 100]
+            # args.topk = [10, 3, 4]
+            # args.topk_list = [1, 8, 24, 96]   
 
     elif args.dataset == AZ_BOOK_CORE:
         args.topk = [8, 2, 6]

@@ -272,6 +272,15 @@ def load_embed(dataset):
     return embed
 
 
+
+def load_embed_dim(dataset, dim):
+    embed_file = '{}/transe_embed_{}.pkl'.format(DATA_DIR[dataset], str(dim))
+    print('Load embedding:', embed_file)
+    embed = pickle.load(open(embed_file, 'rb'))
+    return embed
+
+    
+
 def save_kg(dataset, kg):
     kg_file = DATA_DIR[dataset] + '/kg.pkl'
     pickle.dump(kg, open(kg_file, 'wb'))  

@@ -18,6 +18,8 @@ from utils import *
  
 SavedAction = namedtuple('SavedAction', ['log_prob', 'value'])
 
+
+
 class KG_KGE_pretrained(nn.Module):
     def __init__(self, args):
         super(KG_KGE_pretrained, self).__init__()
@@ -27,8 +29,11 @@ class KG_KGE_pretrained(nn.Module):
         dataset = load_dataset(args.dataset)
 
         self.embed_size = args.embed_size
-        self.embeds = load_embed(args.dataset)
+        # self.embeds = load_embed(args.dataset)
 
+        self.embeds = load_embed_dim(args.dataset, args.embed_size)
+        print('self.embeds = load_embed(load_embed_dim) = ')
+        args.logger.info('self.embeds = load_embed(load_embed_dim')
 
         self.entities = edict()
         self.requires_grad = args.kg_emb_grad
@@ -58,7 +63,7 @@ class KG_KGE_pretrained(nn.Module):
         """
         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False)
         embed.weight.data = torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0)[:,:self.embed_size])
-        embed.requires_grad = self.requires_grad 
+        embed.weight.requires_grad = self.requires_grad 
         # print('key = ', key)
         # print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
         # print('vocab_size + 1 = ', vocab_size + 1)
@@ -95,7 +100,8 @@ class KG_KGE_pretrained(nn.Module):
         """Create relation bias of size [vocab_size+1]."""
         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
-        bias.requires_grad = self.requires_grad
+        # bias.requires_grad = self.requires_grad
+        # bias.weight.requires_grad = self.requires_grad 
         return bias
 
     def _make_distrib(self, distrib):
@@ -198,10 +204,10 @@ class RW_KGE_pretrained(nn.Module):
         numpy_data = torch.from_numpy(weight)
         numpy_data.requires_grad = self.requires_grad
         embed.weight.data = numpy_data
+        embed.weight.requires_grad = self.requires_grad 
         # print('key = ', key)
         # print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
         # print('vocab_size + 1 = ', vocab_size + 1)
-        embed.requires_grad = self.requires_grad
 
         # print('embed = ', embed.weight.shape)
         # print('embed.requires_grad = ', embed.requires_grad)
@@ -228,7 +234,8 @@ class RW_KGE_pretrained(nn.Module):
         """Create relation bias of size [vocab_size+1]."""
         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
-        bias.requires_grad = self.requires_grad
+        # bias.requires_grad = self.requires_grad
+                # bias.weight.requires_grad = self.requires_grad 
         return bias
 
     def _make_distrib(self, distrib):
@@ -246,3 +253,105 @@ class RW_KGE_pretrained(nn.Module):
     def lookup_rela_emb(self, node_type):
         relation_vec = getattr(self, node_type)
         return relation_vec
+
+
+
+# class KnowledgeEmbedding_memory_graph(nn.Module):
+#     def __init__(self, args):
+#         super(KnowledgeEmbedding_memory_graph, self).__init__()
+#         self.embed_size = args.embed_size
+
+#         self.device = args.device
+#         self.l2_lambda = args.l2_lambda
+#         dataset = load_dataset(args.dataset)
+
+
+#         self.embeds = load_embed_dim(args.dataset, args.embed_size)
+#         print('self.embeds = load_embed(load_embed_dim) = ')
+#         args.logger.info('self.embeds = load_embed(load_embed_dim')
+
+#         self.entities = edict()
+
+#         for et in dataset.entity_list:
+#             # print('et in dataset ', et, dataset.entity_list[et].vocab_size)
+#             print('et = ',  et, int(dataset.entity_list[et].vocab_size))
+#             self.entities[et] = edict(vocab_size= int(dataset.entity_list[et].vocab_size))
+
+
+#         for e in self.entities:
+#             embed = self._entity_embedding(e, self.entities[e].vocab_size)
+#             setattr(self, e, embed)
+
+#         input()
+
+#         self.relations = edict()
+#         for r in dataset.rela_list:
+#             self.relations[r] = edict(
+#                 et_distrib=self._make_distrib([float(1) for _ in range(6000)]))
+
+#         for r in dataset.rela_list:
+#             embed = self._relation_embedding(r)
+#             setattr(self, r, embed)
+#             bias = self._relation_bias(188047)
+#             setattr(self, r + '_bias', bias)
+
+#         input()
+
+#     def _entity_embedding(self, key, vocab_size):
+#         """Create entity embedding of size [vocab_size+1, embed_size].
+#             Note that last dimension is always 0's.
+#         """
+#         embed = nn.Embedding(vocab_size + 1, self.embed_size, padding_idx=-1, sparse=False).requires_grad_(False)
+#         embed.weight.data = torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]
+#         # print('key = ', key)
+#         # print('self.embeds[key] = ', (torch.from_numpy(np.concatenate((self.embeds[key], np.zeros_like(self.embeds[key])[:1,:]), axis=0))[:,:self.embed_size]).shape)
+#         # print('vocab_size + 1 = ', vocab_size + 1)
+
+#         print('key = ', key)
+#         print('embed = ', embed.weight.shape)
+#         print('embed.requires_grad = ', embed.requires_grad)
+#         print('vocab_size + 1 = ', vocab_size + 1)
+
+#         return embed
+
+
+#     def _relation_embedding(self, key): 
+#         """Create relation vector of size [1, embed_size]."""
+#         # initrange = 0.5 / self.embed_size
+#         weight = torch.randn(1, self.embed_size,  requires_grad=False)
+#         print('weight = ', weight.shape)
+#         try:
+#             embed = nn.Parameter(torch.from_numpy(self.embeds[key][0:])[:,:self.embed_size])
+#             print('torch.from_numpy(self.embeds[key][0:])[:,:self.embed_size] = ', (torch.from_numpy(self.embeds[key][0:])[:,:self.embed_size]).shpae)
+#         except:
+#             embed = nn.Parameter(weight[:,:self.embed_size])
+
+#         print('key = ', key)
+#         print('embed = ', embed.weight.shape)
+#         print('embed.requires_grad = ', embed.requires_grad)
+
+#         return embed
+
+#     def _relation_bias(self, vocab_size):
+#         """Create relation bias of size [vocab_size+1]."""
+#         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
+#         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
+#         bias.weight.requires_grad = self.requires_grad 
+
+#         return bias
+
+#     def _make_distrib(self, distrib):
+#         """Normalize input numpy vector to distribution."""
+#         distrib = np.power(np.array(distrib, dtype=np.float), 0.75)
+#         distrib = distrib / distrib.sum()
+#         distrib = torch.FloatTensor(distrib).to(self.device)
+#         return distrib
+
+#     def lookup_emb(self, node_type, type_index):
+#         embedding_file = getattr(self, node_type)
+#         entity_vec = embedding_file(type_index)
+#         return entity_vec
+
+#     def lookup_rela_emb(self, node_type):
+#         relation_vec = getattr(self, node_type)
+#         return relation_vec
