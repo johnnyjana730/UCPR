@@ -250,10 +250,12 @@ class AC_lstm_mf_dummy(nn.Module):
         entropy_loss = 0
         for i in range(0, num_steps):
             log_prob, value = self.saved_actions[i]  # log_prob: Tensor of [bs, ], value: Tensor of [bs, 1]
-            advantage = batch_rewards[:, i]
+            advantage = batch_rewards[:, i] - value.squeeze(1)  # Tensor of [bs, ]
             actor_loss += -log_prob * advantage.detach()  # Tensor of [bs, ]
             critic_loss += advantage.pow(2)  # Tensor of [bs, ]
             entropy_loss += -self.entropy[i]  # Tensor of [bs, ]
+
+
         actor_loss = actor_loss.mean()
         critic_loss = critic_loss.mean()
         entropy_loss = entropy_loss.mean()

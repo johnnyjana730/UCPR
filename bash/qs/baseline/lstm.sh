@@ -72,7 +72,7 @@ grad_check=1
 load_pretrain_model=0
 save_pretrain_model=0
 
-exp_name=${epochs}_${lr}_gc${grad_check}
+exp_name=critic_${epochs}_${lr}_gc${grad_check}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name}  \
    --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory} \
