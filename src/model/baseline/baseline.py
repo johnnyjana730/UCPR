@@ -14,7 +14,7 @@ from torch.distributions import Categorical
 
 from easydict import EasyDict as edict
 from model.lstm_base.model_kg import KG_KGE, RW_KGE
-from model.lstm_base.model_kg_pretrained import KG_KGE_pretrained, RW_KGE_pretrained
+from model.lstm_base.model_kg_pre import KG_KGE_pretrained, RW_KGE_pretrained
 from model.lstm_base.backbone_lstm import EncoderRNN, EncoderRNN_batch, KGState_LSTM, KGState_LSTM_ERU
 from utils import *
 

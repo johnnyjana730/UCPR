@@ -51,17 +51,28 @@ class RW_based_KG(object):
         self.check_kg_statistic()
 
     def _fre_pur_men_des(self, dataset, word_tfidf_threshold=0.1, word_freq_threshold=5000):
-        print('Load reviews...')
+
+        print('Load reviews and remove redundant word')
         # (1) Filter words by both tfidf and frequency.
 
+        vocab = dataset.word.vocab
         reviews = [d[2] for d in dataset.review.data]
-        review_tfidf = compute_tfidf_fast(dataset.word.vocab, reviews)
+        review_tfidf = compute_tfidf_fast(vocab, reviews)
+        distrib = dataset.review.word_distrib
+
 
         for rid, data in enumerate(dataset.review.data):
             uid, pid, review = data
 
+
+            # remove redundant word
             doc_tfidf = review_tfidf[rid].toarray()[0]
-            remained_words = [wid for wid in set(review) if doc_tfidf[wid] >= word_tfidf_threshold and dataset.review.word_distrib[wid] <= word_freq_threshold]
+            remained_words = [wid for wid in set(review)
+                              if doc_tfidf[wid] >= word_tfidf_threshold
+                              and distrib[wid] <= word_freq_threshold]
+            removed_words = set(review).difference(remained_words)  # only for visualize
+            removed_words = [vocab[wid] for wid in removed_words]
+
 
             self.update_dic(uid, self.kg_fre_dict[USER])
             self.update_dic(pid, self.kg_fre_dict[PRODUCT])
@@ -109,24 +120,34 @@ class RW_based_KG(object):
 
     def _kg_pur_men_des(self, dataset, word_tfidf_threshold=0.1, word_freq_threshold=5000):
 
-        print('Load reviews...')
+        print('Load reviews and remove redundant word')
 
+        vocab = dataset.word.vocab
         reviews = [d[2] for d in dataset.review.data]
-        review_tfidf = compute_tfidf_fast(dataset.word.vocab, reviews)
-
+        review_tfidf = compute_tfidf_fast(vocab, reviews)
+        distrib = dataset.review.word_distrib
 
         for rid, data in enumerate(dataset.review.data):
             uid, pid, review = data
 
-            doc_tfidf = review_tfidf[rid].toarray()[0]
-            remained_words = [wid for wid in set(review) if doc_tfidf[wid] >= word_tfidf_threshold and dataset.review.word_distrib[wid] <= word_freq_threshold]
 
-            # (2) Add edges.
+            # remove redundant word
+            doc_tfidf = review_tfidf[rid].toarray()[0]
+            remained_words = [wid for wid in set(review)
+                              if doc_tfidf[wid] >= word_tfidf_threshold
+                              and distrib[wid] <= word_freq_threshold]
+            removed_words = set(review).difference(remained_words)  # only for visualize
+            removed_words = [vocab[wid] for wid in removed_words]
+
 
             self._add_edge(USER, uid, PURCHASE, PRODUCT, pid)
 
             for wid in remained_words:
-                if self.kg_fre_dict[WORD][wid] <= self.att_th_upper and self.kg_fre_dict[WORD][wid] > self.att_th_lower:
+                # print('wid = ', wid)
+                # if self.kg_fre_dict[WORD][wid] <= self.att_th_upper and self.kg_fre_dict[WORD][wid] > self.att_th_lower:
+                if self.kg_fre_dict[WORD][wid] <= 3000 and self.kg_fre_dict[WORD][wid] >= self.att_th_lower:
+
+                    # print("USER, uid, MENTION, WORD, wid = ", USER, uid, MENTION, WORD, wid)
                     self._add_edge(USER, uid, MENTION, WORD, wid)
                     self._add_edge(PRODUCT, pid, DESCRIBED_AS, WORD, wid)
 
@@ -141,7 +162,9 @@ class RW_based_KG(object):
                 for eid in set(eids):
                     if relation == PRODUCED_BY and self.kg_fre_dict[BRAND][eid] >= self.att_th_upper: continue
                     elif relation == BELONG_TO and self.kg_fre_dict[CATEGORY][eid] >= self.att_th_upper: continue
+                    elif relation in [ALSO_BOUGHT, ALSO_VIEWED, BOUGHT_TOGETHER] and self.kg_fre_dict[RPRODUCT][eid] < self.att_th_lower: continue
                     elif relation in [ALSO_BOUGHT, ALSO_VIEWED, BOUGHT_TOGETHER] and self.kg_fre_dict[RPRODUCT][eid] >= self.att_th_upper: continue
+                    # elif relation in [ALSO_BOUGHT]:
 
                     et_type = get_entity_tail(PRODUCT, relation)
                     self._add_edge(PRODUCT, pid, relation, et_type, eid)
@@ -294,7 +317,7 @@ class KG_based_KG(object):
     def _kg_oth_rela(self):
 
         for row in self.kg_np:
-            if self.kg_fre_dict[row[0] + self.n_user] < self.att_th_upper and self.kg_fre_dict[row[2] + self.n_user] < self.att_th_upper:
+            if self.kg_fre_dict[row[0] + self.n_user] >= 0 and self.kg_fre_dict[row[2] + self.n_user] >= 0:
                 head, rela, tail = row[0] + self.n_user , str(row[1]), row[2] + self.n_user
                 self.add_new_triplet(head,rela,tail)
                 self.add_new_triplet(tail,rela,head)

@@ -187,7 +187,7 @@ class RW_KGE(nn.Module):
         weight = torch.randn(1, self.embed_size, requires_grad=True)
         embed = nn.Parameter(weight[:,:self.embed_size])
         # print(key, 'embed = ', embed.shape)
-        embed.requires_grad = self.requires_grad
+        embed.requires_grad = True
 
         return embed
 
@@ -195,7 +195,7 @@ class RW_KGE(nn.Module):
         """Create relation bias of size [vocab_size+1]."""
         bias = nn.Embedding(vocab_size + 1, 1, padding_idx=-1, sparse=False)
         bias.weight = nn.Parameter(torch.zeros(vocab_size + 1, 1))
-        # bias.requires_grad = self.requires_grad
+        bias.requires_grad = True
         return bias
 
 

@@ -14,8 +14,8 @@ from torch.distributions import Categorical
 
 from easydict import EasyDict as edict
 from model.lstm_base.model_kg import KG_KGE, RW_KGE
-from model.lstm_base.model_kg_pretrained import KG_KGE_pretrained, RW_KGE_pretrained
-from model.lstm_base.backbone_lstm import EncoderRNN, EncoderRNN_batch, KGState_LSTM, KGState_LSTM_ERU
+from model.lstm_base.model_kg_pre import KG_KGE_pretrained, RW_KGE_pretrained
+from model.lstm_base.backbone_lstm import EncoderRNN_batch, KGState_LSTM
 from utils import *
 
 SavedAction = namedtuple('SavedAction', ['log_prob', 'value'])
@@ -126,7 +126,7 @@ class AC_lstm_mf_dummy(nn.Module):
 
         self.prev_state_h, self.prev_state_c = self.state_lstm.set_up_hidden_state(len(self.uids))
         # print(' self.uids  = ', len(self.uids))
-        # print('self.prev_state_h, self.prev_state_c = ', self.prev_state_h.shape, self.prev_state_c.shape)
+
     def update_path_info(self, up_date_hop):
 
         new_uids = []
@@ -155,9 +155,13 @@ class AC_lstm_mf_dummy(nn.Module):
         # print('all_state = ', all_state.shape)
         # print('prev_state_h = ', self.prev_state_h.shape)
         # print('prev_state_c = ', self.prev_state_c.shape)
+        # input()
+        # print('all_state = ', all_state[0,:])
+        # print('self.prev_state_h = ', self.prev_state_h[:,0,:])
+        # print('self.prev_state_c = ', self.prev_state_c[:,0,:])
+        # input()
 
-        state_output, self.prev_state_h, self.prev_state_c = self.state_lstm(all_state, 
-                    self.prev_state_h,  self.prev_state_c)
+        state_output, self.prev_state_h, self.prev_state_c = self.state_lstm(all_state, self.prev_state_h,  self.prev_state_c)
         return state_output
 
     def action_encoder(self, relation_emb, entitiy_emb):
@@ -257,7 +261,9 @@ class AC_lstm_mf_dummy(nn.Module):
         optimizer.zero_grad()
         loss.backward()
 
-
+        if self.args.grad_check == True and step % 50 == 0:
+            plot_grad_flow_v2(self.named_parameters(), self.args.log_dir, step)
+            print('grad_cherck')
 
         optimizer.step()
         del self.rewards[:]

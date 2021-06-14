@@ -56,7 +56,6 @@ def preprocess_rw_based(args):
     save_labels(args.dataset, tst_label, mode='test')
     save_kg(args.dataset, kg)
 
-
 def kg_labels_filter(core_user_list, dataset, mode='train'):
 
     rating_file = DATA_DIR[dataset] + '/ratings_final'

@@ -1,34 +1,34 @@
-#!/usr/bin/env bash
+#!/usr/bin/env 
 export CUDA_VISIBLE_DEVICES=$1
 # export PYTHONPATH="./"
 export PYTHONPATH="../"
 
-# dataset=beauty_core
+dataset=beauty_core
 
-# cmd="python ./preprocess.py --dataset ${dataset}"
-# echo "Executing $cmd"
-# $cmd
-
-# cmd="python ./train_transe_rw.py --dataset ${dataset}"
-# echo "Executing $cmd"
-# $cmd 
-
-# dataset=cell_core
-
-# cmd="python ./preprocess.py --dataset ${dataset}"
-# echo "Executing $cmd"
-# $cmd
+cmd="python ./preprocess.py --dataset ${dataset}"
+echo "Executing $cmd"
+$cmd &
 
 # cmd="python ./train_transe_rw.py --dataset ${dataset}"
 # echo "Executing $cmd"
 # $cmd 
 
+dataset=cell_core
 
-# dataset=cloth_core
+cmd="python ./preprocess.py --dataset ${dataset}"
+echo "Executing $cmd"
+$cmd &
 
-# cmd="python ./preprocess.py --dataset ${dataset}"
+# cmd="python ./train_transe_rw.py --dataset ${dataset}"
 # echo "Executing $cmd"
-# $cmd
+# $cmd 
+
+
+dataset=cloth_core
+
+cmd="python ./preprocess.py --dataset ${dataset}"
+echo "Executing $cmd"
+$cmd &
 
 # cmd="python ./train_transe_rw.py --dataset ${dataset}"
 # echo "Executing $cmd"
@@ -39,18 +39,18 @@ dataset=MovieLens-1M_core
 
 cmd="python ./preprocess.py --dataset ${dataset}"
 echo "Executing $cmd"
-$cmd
+$cmd & 
 
-# cmd="python ./train_transe_kg.py --dataset ${dataset}"
-# echo "Executing $cmd"
-# $cmd 
+# # cmd="python ./train_transe_kg.py --dataset ${dataset}"
+# # echo "Executing $cmd"
+# # $cmd 
 
 
 dataset=amazon-book_20core
 
 cmd="python ./preprocess.py --dataset ${dataset}"
 echo "Executing $cmd"
-$cmd
+$cmd &
 
 # cmd="python ./train_transe_kg.py --dataset ${dataset}"
 # echo "Executing $cmd"

@@ -22,19 +22,6 @@ import json
 
 SavedAction = namedtuple('SavedAction', ['log_prob', 'value'])
 
-
-# print('args.load_pretrain_model == True')
-# policy_file = args.save_model_dir_tmp + '/policy_model_epoch_{}.ckpt'.format(args.pretrained_st_epoch)
-# pretrain_sd = torch.load(policy_file)
-# model = Memory_Model(args, env.user_triplet_set, env.rela_2_index, 
-#                         env.act_dim, gamma=args.gamma, hidden_sizes=args.hidden).to(args.device)
-# model_sd = model.state_dict()
-# pretrain_sd = {k: v for k, v in pretrain_sd.items() if k in model_sd}
-# para_meter = [k.split('.')[0] for k, v in pretrain_sd.items()]
-
-# model_sd.update(pretrain_sd)
-# model.load_state_dict(model_sd)
-
 def pretrain_set(args, env):
     if args.load_pretrain_model == True:    
         logger = get_logger(args.log_dir + '/train_log_pretrain.txt')
@@ -44,9 +31,15 @@ def pretrain_set(args, env):
         with open(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt') as json_file:
             best_model_json = json.load(json_file)
 
+        logger.info(args.pretrained_dir + '/' + args.sort_by + '_pretrained_md_json_' + args.topk_string + '.txt')
 
         policy_file = best_model_json['pretrained_file']
         pretrain_sd = torch.load(policy_file)
+
+        logger.info("pretrain_model_load")
+        logger.info(policy_file)
+        # input()
+
         model = Memory_Model(args, env.user_triplet_set, env.rela_2_index, env.act_dim, gamma=args.gamma, hidden_sizes=args.hidden).to(args.device)
         model_sd = model.state_dict()
 
@@ -69,14 +62,15 @@ def pretrain_set(args, env):
                     print('name = ', name)
                     for param in child.parameters():
                         param.requires_grad = False
-        elif args.dataset == MOVIE_CORE:
+
+        elif args.dataset in [MOVIE_CORE, AZ_BOOK_CORE]:
             for name, child in model.named_children():
                 print('name = ', name)
                 if name in para_meter and 'kg' not in name and 'actor' not in name and 'critic' not in name:
                     print('name = ', name)
                     for param in child.parameters():
                         param.requires_grad = False
-
+                        
         grad_string = ''
         for name, child in model.named_children():
             print('name = ', name)
@@ -93,14 +87,38 @@ def pretrain_set(args, env):
 
         model = Memory_Model(args, env.user_triplet_set, env.rela_2_index, env.act_dim, gamma=args.gamma, hidden_sizes=args.hidden).to(args.device)
 
+        grad_string = ''
+        for name, child in model.named_children():
+            print('name = ', name)
+            for param in child.parameters():
+                print(param.requires_grad)
+            grad_string += ' name = ' + name  + ' ' + str(param.requires_grad)
+
+        logger.info(grad_string)
+
     core_user_list = args.core_user_list
     kg_fre_dict = args.kg_fre_dict
+    sp_user_filter = args.sp_user_filter
+
+    try:
+        kg_user_filter = args.kg_user_filter
+        args.kg_user_filter = ''
+    except:
+        pass
 
     args.core_user_list = ''
     args.kg_fre_dict = ''
+    args.sp_user_filter = ''
     logger.info(args)
     args.core_user_list = core_user_list
     args.kg_fre_dict = kg_fre_dict
+    args.sp_user_filter = sp_user_filter
+
+    try:
+        args.kg_user_filter = kg_user_filter
+    except:
+        pass
+
     del core_user_list, kg_fre_dict
 
     return model, logger
@@ -110,10 +128,14 @@ def train(args):
     env = KG_Env(args, args.dataset, args.max_acts, max_path_len=args.max_path_len, state_history=args.state_history)
     print('env.output_valid_user() = ', len(env.output_valid_user()))
     print('args.batch_size = ', args.batch_size)
-    # input()
+
     dataloader = ACDataLoader(env.output_valid_user(), args.batch_size)
 
     model, logger = pretrain_set(args, env)
+    logger.info('valid user = ')
+    # logger.info(env.output_valid_user())
+    logger.info(len(env.output_valid_user()))
+
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
     logger.info('Parameters:' + str([i[0] for i in model.named_parameters()]))
     step, total_losses, total_plosses, total_vlosses, total_entropy, total_rewards = 0, [], [], [], [], []
@@ -130,7 +152,11 @@ def train(args):
 
             while not env._done:
                 batch_act_mask = env.batch_action_mask(dropout=args.act_dropout)  # numpy array of size [bs, act_dim]
+
+                # print('env._batch_path = ', env._batch_path)
+                # input()
                 batch_emb_state = model.generate_st_emb(env._batch_path)
+
                 batch_next_action_emb = model.generate_act_emb(env._batch_path, env._batch_curr_actions)
                 batch_act_idx = model.select_action(batch_emb_state, batch_next_action_emb, batch_act_mask, args.device)  # int
                 batch_state, batch_reward = env.batch_step(batch_act_idx)
@@ -149,8 +175,6 @@ def train(args):
             total_entropy.append(eloss)
             step += 1
 
-            # print('step = ', step, 'batch_reward = ', batch_reward, end='\r')
-
             # Report performance
             if step > 0 and step % 100 == 0:
                 avg_reward = np.mean(total_rewards) / args.batch_size
@@ -167,10 +191,10 @@ def train(args):
                         ' | entropy={:.5f}'.format(avg_entropy) +
                         ' | reward={:.5f}'.format(avg_reward))
         ### END of epoch ###
-
-        policy_file = '{}/policy_model_epoch_{}.ckpt'.format(args.save_model_dir, epoch)
-        logger.info("Save model to " + policy_file)
-        torch.save(model.state_dict(), policy_file)
+        if epoch % 5 == 0:
+            policy_file = '{}/policy_model_epoch_{}.ckpt'.format(args.save_model_dir, epoch)
+            logger.info("Save model to " + policy_file)
+            torch.save(model.state_dict(), policy_file)
 
     cur_tim = time.strftime("%Y%m%d-%H%M%S")
     logger.info("current time = " + str(cur_tim))

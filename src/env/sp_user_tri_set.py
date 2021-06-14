@@ -65,7 +65,7 @@ def _kg_based_get_user_triplet_set(user, history, p_hop=2, KG_RELATION = None, n
                 if k_ == SELF_LOOP: continue
                 for v_ in v_set:
                     if g_et_idx2ty[v_] == USER:
-                        if v_ in g_args.core_user_list: tmp_list.append([k_,v_])
+                        if v_ in g_args.sp_user_filter: tmp_list.append([k_,v_])
                     else:
                         if g_args.kg_fre_dict[v_] >= g_args.kg_fre_lower:
                             tmp_list.append([k_,v_])
@@ -119,15 +119,15 @@ def rw_get_user_triplet_set(args, kg, user_list, p_hop, n_memory):
 
 def _rw_get_user_triplet_set(user, history, p_hop=2, KG_RELATION = None, n_memory=32, n_neighbor=16):
 
-    def add_list_condition(next_entities, h, entity_type, entity, kg_fre_upper, kg_fre_lower, remove_type):
+    def add_list_condition(next_entities, h, entity_type, entity, kg_fre_upper, kg_fre_lower, remove_type, skip_self_loop = True):
         for k_, v_set in g_kg(entity_type,entity).items():
-
+            if k_ == SELF_LOOP and skip_self_loop == True: continue
             next_node_type = KG_RELATION[entity_type][k_]
             if next_node_type in remove_type: print('next_node_type remove == ', remove_type, end='\r'); continue
 
             if next_node_type == USER:
                 for v_ in v_set:
-                    if v_ in g_args.core_user_list:  next_entities.append([k_,v_])
+                    if v_ in g_args.sp_user_filter:  next_entities.append([k_,v_])
             else:
                 for v_ in v_set:
                     if g_args.kg_fre_dict[next_node_type][v_] < kg_fre_upper and \
@@ -161,10 +161,10 @@ def _rw_get_user_triplet_set(user, history, p_hop=2, KG_RELATION = None, n_memor
 
             next_entities = []
 
-            next_entities = add_list_condition(next_entities, h, entity_type, entity,  g_args.kg_fre_upper, g_args.kg_fre_lower, remove_type)
+            next_entities = add_list_condition(next_entities, h, entity_type, entity,  g_args.kg_fre_upper, g_args.kg_fre_lower, remove_type, skip_self_loop = True)
             if len(next_entities) == 0:
-                next_entities = add_list_condition(next_entities, h, entity_type, entity,  3000, 0, [])
-
+                next_entities = add_list_condition(next_entities, h, entity_type, entity,   g_args.kg_fre_upper, g_args.kg_fre_lower, [], skip_self_loop = False)
+            # print('len(next_entities)  = ', len(next_entities))
             for tail_and_relation in random.sample(next_entities, min(len(next_entities), n_neighbor)):
                 memories_h.append([entity_type,entity])
                 memories_r.append(tail_and_relation[0])

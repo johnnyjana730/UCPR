@@ -82,23 +82,26 @@ class BatchKGEnvironment(object):
 
     def load_kg_dataset_emb(self, args, dataset_str):
 
-        self.kg = load_kg(dataset_str)
+        if self.args.envir == 'p1':
+
+            self.kg = load_kg(dataset_str)
+        elif self.args.envir == 'p2':
+
+            self.kg = load_kg(dataset_str)
+
         self.dataset = load_dataset(dataset_str)
         self.args.core_user_list = self.dataset.core_user_list
 
-        self.args.kg_fre_dict = self.kg.kg_fre_dict  
-        print('len(self.core_user_list) = ', len(self.args.core_user_list))
-        self.user_list = [user for user in list(self.kg(USER).keys())if user in self.args.core_user_list]
+        self.args.sp_user_filter = self.dataset.total_user_list[:800]
 
-        print('self.args.core_user_list = ', len(self.args.core_user_list))
-        print('self.user_triplet_list = ', len(self.user_list))
-        # input()
+        
+        self.args.kg_fre_dict = self.kg.kg_fre_dict 
+
+        self.user_list = [user for user in list(self.kg(USER).keys()) if user in self.args.core_user_list]
 
         self.embeds = load_embed(dataset_str)
         self.embed_size = self.embeds[USER].shape[1]
         self.embeds[SELF_LOOP] = (np.zeros(self.embed_size), 0.0)
-
-
 
         self.rela_2_index = {}
         for k, v in self.embeds.items():
@@ -178,11 +181,13 @@ class BatchKGEnvironment(object):
     def _get_actions(self, path, done):
         """Compute actions for current node."""
         _, curr_node_type, curr_node_id = path[-1]
-        actions = [(SELF_LOOP, curr_node_id)]  # self-loop must be included.
+        actions = [(SELF_LOOP, curr_node_id)]
+        # actions = [(SELF_LOOP, curr_node_id)]  # self-loop must be included.
 
         # (1) If game is finished, only return self-loop action.
         if done:
             return actions
+
 
         # (2) Get all possible edges from original knowledge graph.
         # [CAVEAT] Must remove visited nodes!
@@ -199,7 +204,7 @@ class BatchKGEnvironment(object):
 
         # (3) If candidate action set is empty, only return self-loop action.
         if len(candidate_acts) == 0:
-            return actions
+            return [(SELF_LOOP, curr_node_id)]
 
         # (4) If number of available actions is smaller than max_acts, return action sets.
         if len(candidate_acts) <= self.max_acts:
@@ -212,6 +217,8 @@ class BatchKGEnvironment(object):
         scores = []
         for r, next_node_id in candidate_acts:
             next_node_type = self.next_type(curr_node_type, r, next_node_id)
+            # print('curr_node_type, r, next_node_id = ', curr_node_type, r, next_node_id)
+            # print('next_node_type = ', next_node_type)
             if next_node_type == USER:
                 src_embed = user_embed
             elif next_node_type == PRODUCT:
@@ -256,9 +263,14 @@ class BatchKGEnvironment(object):
         # If it is initial state or 1-hop search, reward is 0.
         if len(path) <= 2:
             return 0.0
+
+        # print('path = ', path)
         if not self.PATH_PTN._rw_has_pattern(path):
             return 0.0
         target_score = 0.0
+
+        # print('has type')
+
         _, curr_node_type, curr_node_id = path[-1]
         if curr_node_type == PRODUCT:
             # Give soft reward for other reached products.
@@ -268,6 +280,8 @@ class BatchKGEnvironment(object):
             else: score += 0.0
             target_score = max(score, 0.0)
 
+        # print(path, 'target_score = ', target_score)
+        # input()
         return target_score
 
     def _batch_get_reward(self, batch_path):

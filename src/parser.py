@@ -30,7 +30,7 @@ def parse_args():
 
     parser.add_argument('--att_core', type=int, default=0, help='h0_embbed')
     parser.add_argument('--user_core_th', type=int, default=6, help='h0_embbed')
-
+    parser.add_argument('--grad_check', type=int, default=0, help='h0_embbed')
 
     parser.add_argument('--embed_size', type=int, default=50, help='knowledge embedding size.')
     parser.add_argument('--act_dropout', type=float, default=0.5, help='action dropout rate.')
@@ -53,6 +53,8 @@ def parse_args():
     parser.add_argument('--kg_emb_grad', type=int, default=0, help='if kg_emb_grad')
     parser.add_argument('--save_pretrain_model', type=int, default=0, help='save_pretrain_model')
     parser.add_argument('--mv_test', type=int, default=0, help='mv_test')
+    parser.add_argument('--env_old', type=int, default=0, help='env_old')
+    parser.add_argument('--kg_old', type=int, default=0, help='env_old')
 
     parser.add_argument('--tri_wd_rm', type=int, default=0, help='tri_wd_rm')
     parser.add_argument('--tri_pro_rm', type=int, default=0, help='tri_pro_rm')
@@ -72,7 +74,7 @@ def parse_args():
     parser.add_argument('--user_core', type=int, default=300, help='core number')
     parser.add_argument('--best_model_epoch', type=int, default=0, help='core number')
 
-    parser.add_argument('--kg_fre_lower', type=int, default=5, help='core number')
+    parser.add_argument('--kg_fre_lower', type=int, default=15, help='core number')
     parser.add_argument('--kg_fre_upper', type=int, default=500, help='core number')
 
     parser.add_argument('--lambda_num', type=float, default=0.5, help='core number')
@@ -85,7 +87,8 @@ def parse_args():
     parser.add_argument('--eva_epochs', type=int, default=0, help='core number')
     parser.add_argument('--KGE_pretrained', type=int, default=0, help='KGE_pretrained')
     parser.add_argument('--load_pt_emb_size', type=int, default=0, help='core number')
-
+    parser.add_argument('--user_o', type=int, default=0, help='user_o')
+    
     args = parser.parse_args()
     args.gpu = str(args.gpu)
 
@@ -99,6 +102,11 @@ def parse_args():
     args.load_pt_emb_size = (args.load_pt_emb_size == 1)
     args.kg_emb_grad = (args.kg_emb_grad == 1)
     args.mv_test = (args.mv_test == 1)
+    args.env_old = (args.env_old == 1)
+
+    args.kg_old = (args.kg_old == 1)
+    args.user_o = (args.user_o == 1)
+    args.grad_check = (args.grad_check == 1)
 
     args.pretest = (args.pretest == 1)
     args.save_pretrain_model = (args.save_pretrain_model == 1)

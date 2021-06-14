@@ -33,28 +33,28 @@ DATA_DIR = {
 }
 
 SAVE_MODEL_DIR = {
-    BEAUTY_CORE: '../save_model/Amazon_Beauty_Core',
-    CELL_CORE: '../save_model/Amazon_Cellphones_Core',
-    CLOTH_CORE: '../save_mmodel/Amazon_Clothing_Core',
-    MOVIE_CORE: '../save_model/MovieLens-1M_Core',
-    AZ_BOOK_CORE: '../save_model/amazon-book_20core'
+    BEAUTY_CORE: '../sv_model/Amazon_Beauty_Core',
+    CELL_CORE: '../sv_model/Amazon_Cellphones_Core',
+    CLOTH_CORE: '../sv_model/Amazon_Clothing_Core',
+    MOVIE_CORE: '../sv_model/MovieLens-1M_Core',
+    AZ_BOOK_CORE: '../sv_model/amazon-book_20core'
 }
 
 
 EVALUATION = {
-    BEAUTY_CORE: '../eva/Amazon_Beauty_Core',
-    CELL_CORE: '../eva/Amazon_Cellphones_Core',
-    CLOTH_CORE: '../eva/Amazon_Clothing_Core',
-    MOVIE_CORE: '../eva/MovieLens-1M_Core',
-    AZ_BOOK_CORE: '../eva/amazon-book_20core'
+    BEAUTY_CORE: '../eva_pre/Amazon_Beauty_Core',
+    CELL_CORE: '../eva_pre/Amazon_Cellphones_Core',
+    CLOTH_CORE: '../eva_pre/Amazon_Clothing_Core',
+    MOVIE_CORE: '../eva_pre/MovieLens-1M_Core',
+    AZ_BOOK_CORE: '../eva_pre/amazon-book_20core'
 }
 
 EVALUATION_2 = {
-    BEAUTY_CORE: '../eva_2/Amazon_Beauty_Core',
-    CELL_CORE: '../eva_2/Amazon_Cellphones_Core',
-    CLOTH_CORE: '../eva_2/Amazon_Clothing_Core',
-    MOVIE_CORE: '../eva_2/MovieLens-1M_Core',
-    AZ_BOOK_CORE: '../eva_2/amazon-book_20core'
+    BEAUTY_CORE: '../eval/Amazon_Beauty_Core',
+    CELL_CORE: '../eval/Amazon_Cellphones_Core',
+    CLOTH_CORE: '../eval/Amazon_Clothing_Core',
+    MOVIE_CORE: '../eval/MovieLens-1M_Core',
+    AZ_BOOK_CORE: '../eval/amazon-book_20core'
 }
 
 CASE_ST = {
@@ -222,18 +222,15 @@ def save_dataset(dataset, dataset_obj):
         pickle.dump(dataset_obj, f)
 
 
-def load_dataset(dataset):
-    dataset_file = DATA_DIR[dataset] + '/dataset.pkl'
+def load_dataset(dataset, logger = None):
+    dataset_file = DATA_DIR[dataset] + '/dataset'
+    dataset_file += '.pkl'
+    print('load dataset_file = ', dataset_file)
+    if logger != None:
+        logger.info('load dataset_file = ' + dataset_file)
     dataset_obj = pickle.load(open(dataset_file, 'rb'))
     return dataset_obj
 
-
-def save_dataset_test_eval(args, dataset, dataset_obj):
-    dataset_file = DATA_DIR[dataset] + '/dataset'
-    dataset_file += '_eval_test'+ '.pkl'
-    print('save dataset test eval file = ', dataset_file)
-    with open(dataset_file, 'wb') as f:
-        pickle.dump(dataset_obj, f)
 
 
 def save_labels(dataset, labels, mode='train'):
@@ -247,7 +244,7 @@ def save_labels(dataset, labels, mode='train'):
         pickle.dump(labels, f)
 
 
-def load_labels(dataset, mode='train'):
+def load_labels(dataset, mode='train',  logger = None):
     if mode == 'train':
         label_file = LABELS[dataset][0]
     elif mode == 'test':
@@ -257,36 +254,86 @@ def load_labels(dataset, mode='train'):
     print('label_file = ', label_file)
 
     user_products = pickle.load(open(label_file, 'rb'))
-    return user_products
 
+    if logger != None:
+        logger.info(mode + ' load_labels = ' + label_file)
+
+    return user_products
 
 def save_embed(dataset, embed):
     embed_file = '{}/transe_embed.pkl'.format(DATA_DIR[dataset])
     pickle.dump(embed, open(embed_file, 'wb'))
 
 
-def load_embed(dataset):
+def load_embed(dataset, logger = None):
     embed_file = '{}/transe_embed.pkl'.format(DATA_DIR[dataset])
     print('Load embedding:', embed_file)
     embed = pickle.load(open(embed_file, 'rb'))
+    if logger != None:
+        logger.info('load embed_file = ' + embed_file)
     return embed
 
-
-
-def load_embed_dim(dataset, dim):
+def load_embed_dim(dataset, dim, logger = None):
     embed_file = '{}/transe_embed_{}.pkl'.format(DATA_DIR[dataset], str(dim))
     print('Load embedding:', embed_file)
     embed = pickle.load(open(embed_file, 'rb'))
+    if logger != None:
+        logger.info('load_embed_dim = ' +  embed_file)
     return embed
-
-    
 
 def save_kg(dataset, kg):
     kg_file = DATA_DIR[dataset] + '/kg.pkl'
+
+    print('save kg = ', kg_file)
     pickle.dump(kg, open(kg_file, 'wb'))  
 
-
-def load_kg(dataset):
+def load_kg(dataset, logger = None):
     kg_file = DATA_DIR[dataset] + '/kg.pkl'
+    print('load kg = ', kg_file)
     kg = pickle.load(open(kg_file, 'rb'))
+    if logger != None:
+        logger.info('load kg_file = ' + kg_file)
+
     return kg
+
+
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt 
+import matplotlib.lines
+
+matplotlib.rcParams['interactive'] == True
+
+
+def plot_grad_flow_v2(named_parameters, path, step):
+    ave_grads = []
+    max_grads= []
+    layers = []
+
+    for n, p in named_parameters:
+        # print('n, p = ', n)
+        if ("bias" not in n):
+            layers.append(n)
+            try:
+                ave_grads.append(p.grad.cpu().abs().mean())
+                max_grads.append(p.grad.cpu().abs().max())
+            except:
+                ave_grads.append(0)
+                max_grads.append(0)
+
+    plt.bar(np.arange(len(max_grads)), max_grads, alpha=0.1, lw=1, color="c")
+    plt.bar(np.arange(len(max_grads)), ave_grads, alpha=0.1, lw=1, color="b")
+    plt.hlines(0, 0, len(ave_grads)+1, lw=2, color="k" )
+    plt.xticks(range(0,len(ave_grads), 1), layers, rotation="vertical")
+    plt.xlim(left=0, right=len(ave_grads))
+    plt.ylim(bottom = -0.001, top=0.02) # zoom in on the lower gradient regions
+    plt.xlabel("Layers")
+    plt.ylabel("average gradient")
+    plt.title("Gradient flow")
+    plt.grid(True)
+    plt.legend([matplotlib.lines.Line2D([0], [0], color="c", lw=4),
+                matplotlib.lines.Line2D([0], [0], color="b", lw=4),
+                matplotlib.lines.Line2D([0], [0], color="k", lw=4)], ['max-gradient', 'mean-gradient', 'zero-gradient'])
+    plt.tight_layout()
+    plt.savefig(path + '/figure{:d}.png'.format(step))

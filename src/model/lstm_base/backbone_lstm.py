@@ -68,8 +68,13 @@ class KGState_LSTM(nn.Module):
         return self.zero_hm, self.zero_cm
 
     def __call__(self, history_seq, hm, cm):
+        # print('hm = ', hm.shape)
+        # print('cm = ', cm.shape)
+        # print('history_seq = ', history_seq.shape)
+        # input()
         output, hn, cn = self.policy_lstm(history_seq, hm, cm)
         return output, hn, cn
+
 
 
 class KGState_LSTM_ERU(nn.Module):

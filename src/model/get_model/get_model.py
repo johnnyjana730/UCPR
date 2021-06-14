@@ -9,6 +9,8 @@ from model.UCPR import UCPR
 
 from env.env import *
 
+
+
 args = parse_args()
 
 # ********************* model select *****************************
@@ -16,6 +18,7 @@ if args.model == 'lstm':
     Memory_Model = AC_lstm_mf_dummy
 elif args.model == 'UCPR':
     Memory_Model = UCPR
+
 elif args.model == 'baseline':
     Memory_Model = ActorCritic
 
