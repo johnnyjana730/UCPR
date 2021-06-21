@@ -31,10 +31,10 @@ export test_file="test.py"
 file_name="lstm.sh"
 
 data=bu
-bash qs/baseline/${file_name} 0 $data &
+bash qs/baseline/${file_name} $1 $data &
 
 data=cl
-bash qs/baseline/${file_name} 0 $data &
+bash qs/baseline/${file_name} $1 $data &
 
 data=cell
-bash qs/baseline/${file_name} 0 $data &
+bash qs/baseline/${file_name} $1 $data &

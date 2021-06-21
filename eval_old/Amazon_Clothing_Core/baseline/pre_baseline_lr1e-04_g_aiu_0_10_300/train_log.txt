@@ -1,0 +1,159 @@
+[INFO]  load dataset_file = ../data/Amazon_Clothing_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Clothing_Core/transe_embed.pkl
+[INFO]   name = kg_emb True name = state_lstm True name = transfor_state True name = state_tr_query True name = l1 True name = l2 True name = actor True name = critic True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='cloth_core', device=device(type='cuda', index=0), embed_size=16, ent_weight=0.001, env_old=False, envir='p1', epochs=500, eva_epochs=0, gamma=0.99, gp_setting='6000_800_15_500_250', gpu='0', grad_check=False, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=10, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=0.5, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300', logger=<Logger ../eval/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/train_log.txt (DEBUG)>, lr=0.0001, max_acts=50, max_path_len=3, model='baseline', mv_test=False, n_memory=32, name='pre_baseline_lr1e-04', non_sampling=False, p_hop=1, pretest=False, pretrained_dir='../eva_pre/Amazon_Clothing_Core/pretrained/emb_szie_16', pretrained_st_epoch=0, reasoning_step=3, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300', save_pretrain_model=False, seed=52, sort_by='score', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[10, 15, 1], topk_list=[1, 10, 150, 100], topk_string='10, 15, 1', training=True, tri_pro_rm=False, tri_wd_rm=False, user_core=300, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  10228
+[INFO]  Parameters:['kg_emb.self_loop', 'kg_emb.purchase', 'kg_emb.mentions', 'kg_emb.described_as', 'kg_emb.produced_by', 'kg_emb.belongs_to', 'kg_emb.also_bought', 'kg_emb.also_viewed', 'kg_emb.bought_together', 'kg_emb.padding', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.word.weight', 'kg_emb.related_product.weight', 'kg_emb.brand.weight', 'kg_emb.category.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.mentions_bias.weight', 'kg_emb.described_as_bias.weight', 'kg_emb.produced_by_bias.weight', 'kg_emb.belongs_to_bias.weight', 'kg_emb.also_bought_bias.weight', 'kg_emb.also_viewed_bias.weight', 'kg_emb.bought_together_bias.weight', 'kg_emb.padding_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'transfor_state.weight', 'transfor_state.bias', 'state_tr_query.weight', 'state_tr_query.bias', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias']
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_5.ckpt
+[INFO]  epoch/step=9/100 | loss=-1.05264 | ploss=-1.14270 | vloss=0.09951 | entropy=-9.45714 | reward=0.00392
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_10.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_15.ckpt
+[INFO]  epoch/step=19/200 | loss=-0.39609 | ploss=-0.42018 | vloss=0.03354 | entropy=-9.45524 | reward=0.00433
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_20.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_25.ckpt
+[INFO]  epoch/step=29/300 | loss=-0.20968 | ploss=-0.22040 | vloss=0.02018 | entropy=-9.45715 | reward=0.00417
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_30.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_35.ckpt
+[INFO]  epoch/step=39/400 | loss=-0.13249 | ploss=-0.13959 | vloss=0.01655 | entropy=-9.45478 | reward=0.00439
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_40.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_45.ckpt
+[INFO]  epoch/step=49/500 | loss=-0.09358 | ploss=-0.09866 | vloss=0.01453 | entropy=-9.45396 | reward=0.00434
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_50.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_55.ckpt
+[INFO]  epoch/step=59/600 | loss=-0.05570 | ploss=-0.06269 | vloss=0.01645 | entropy=-9.45358 | reward=0.00534
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=69/700 | loss=-0.03505 | ploss=-0.04347 | vloss=0.01787 | entropy=-9.44910 | reward=0.00600
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_75.ckpt
+[INFO]  epoch/step=79/800 | loss=-0.02326 | ploss=-0.03137 | vloss=0.01755 | entropy=-9.44160 | reward=0.00597
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_80.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=89/900 | loss=-0.00676 | ploss=-0.01955 | vloss=0.02221 | entropy=-9.42168 | reward=0.00764
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/1000 | loss=0.01483 | ploss=-0.01160 | vloss=0.03580 | entropy=-9.37615 | reward=0.01249
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_100.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_105.ckpt
+[INFO]  epoch/step=109/1100 | loss=0.03735 | ploss=-0.01217 | vloss=0.05875 | entropy=-9.23749 | reward=0.02098
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_110.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_115.ckpt
+[INFO]  epoch/step=119/1200 | loss=0.07517 | ploss=-0.00805 | vloss=0.09224 | entropy=-9.02422 | reward=0.03404
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_120.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_125.ckpt
+[INFO]  epoch/step=129/1300 | loss=0.13631 | ploss=-0.01149 | vloss=0.15645 | entropy=-8.65396 | reward=0.06059
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_130.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_135.ckpt
+[INFO]  epoch/step=139/1400 | loss=0.25191 | ploss=-0.03760 | vloss=0.29721 | entropy=-7.69534 | reward=0.12521
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_140.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_145.ckpt
+[INFO]  epoch/step=149/1500 | loss=0.32775 | ploss=-0.08830 | vloss=0.42262 | entropy=-6.56827 | reward=0.19157
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_150.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_155.ckpt
+[INFO]  epoch/step=159/1600 | loss=0.37330 | ploss=-0.10282 | vloss=0.48202 | entropy=-5.90030 | reward=0.22835
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_160.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_165.ckpt
+[INFO]  epoch/step=169/1700 | loss=0.40555 | ploss=-0.10475 | vloss=0.51574 | entropy=-5.44023 | reward=0.25223
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_170.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_175.ckpt
+[INFO]  epoch/step=179/1800 | loss=0.43537 | ploss=-0.10098 | vloss=0.54143 | entropy=-5.07721 | reward=0.27106
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_180.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_185.ckpt
+[INFO]  epoch/step=189/1900 | loss=0.43807 | ploss=-0.11008 | vloss=0.55299 | entropy=-4.84630 | reward=0.28021
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_190.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_195.ckpt
+[INFO]  epoch/step=199/2000 | loss=0.44072 | ploss=-0.11516 | vloss=0.56056 | entropy=-4.67012 | reward=0.28574
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_200.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_205.ckpt
+[INFO]  epoch/step=209/2100 | loss=0.45339 | ploss=-0.11182 | vloss=0.56975 | entropy=-4.54688 | reward=0.29369
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_210.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_215.ckpt
+[INFO]  epoch/step=219/2200 | loss=0.43733 | ploss=-0.12726 | vloss=0.56904 | entropy=-4.45146 | reward=0.29193
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_220.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_225.ckpt
+[INFO]  epoch/step=229/2300 | loss=0.46582 | ploss=-0.11129 | vloss=0.58146 | entropy=-4.35916 | reward=0.30277
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_230.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_235.ckpt
+[INFO]  epoch/step=239/2400 | loss=0.46623 | ploss=-0.11628 | vloss=0.58678 | entropy=-4.27422 | reward=0.30689
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_240.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_245.ckpt
+[INFO]  epoch/step=249/2500 | loss=0.47360 | ploss=-0.11350 | vloss=0.59130 | entropy=-4.19612 | reward=0.31051
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_250.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_255.ckpt
+[INFO]  epoch/step=259/2600 | loss=0.47779 | ploss=-0.11171 | vloss=0.59363 | entropy=-4.13328 | reward=0.31241
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_260.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_265.ckpt
+[INFO]  epoch/step=269/2700 | loss=0.47777 | ploss=-0.11352 | vloss=0.59537 | entropy=-4.07930 | reward=0.31365
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_270.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_275.ckpt
+[INFO]  epoch/step=279/2800 | loss=0.49640 | ploss=-0.10216 | vloss=0.60257 | entropy=-4.01010 | reward=0.32044
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_280.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_285.ckpt
+[INFO]  epoch/step=289/2900 | loss=0.49618 | ploss=-0.10573 | vloss=0.60586 | entropy=-3.95443 | reward=0.32228
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_290.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_295.ckpt
+[INFO]  epoch/step=299/3000 | loss=0.49726 | ploss=-0.10670 | vloss=0.60786 | entropy=-3.89968 | reward=0.32418
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_300.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_305.ckpt
+[INFO]  epoch/step=309/3100 | loss=0.49727 | ploss=-0.10795 | vloss=0.60908 | entropy=-3.85977 | reward=0.32446
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_310.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_315.ckpt
+[INFO]  epoch/step=319/3200 | loss=0.50302 | ploss=-0.10411 | vloss=0.61093 | entropy=-3.80246 | reward=0.32534
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_320.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_325.ckpt
+[INFO]  epoch/step=329/3300 | loss=0.51254 | ploss=-0.09884 | vloss=0.61512 | entropy=-3.74854 | reward=0.32909
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_330.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_335.ckpt
+[INFO]  epoch/step=339/3400 | loss=0.51450 | ploss=-0.09804 | vloss=0.61623 | entropy=-3.69245 | reward=0.33005
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_340.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_345.ckpt
+[INFO]  epoch/step=349/3500 | loss=0.52354 | ploss=-0.09255 | vloss=0.61974 | entropy=-3.64675 | reward=0.33352
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_350.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_355.ckpt
+[INFO]  epoch/step=359/3600 | loss=0.51598 | ploss=-0.09874 | vloss=0.61833 | entropy=-3.60695 | reward=0.33152
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_360.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_365.ckpt
+[INFO]  epoch/step=369/3700 | loss=0.53265 | ploss=-0.08757 | vloss=0.62378 | entropy=-3.55897 | reward=0.33666
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_370.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_375.ckpt
+[INFO]  epoch/step=379/3800 | loss=0.53533 | ploss=-0.08678 | vloss=0.62561 | entropy=-3.50649 | reward=0.33859
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_380.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_385.ckpt
+[INFO]  epoch/step=389/3900 | loss=0.53248 | ploss=-0.08975 | vloss=0.62569 | entropy=-3.46621 | reward=0.33789
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_390.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_395.ckpt
+[INFO]  epoch/step=399/4000 | loss=0.54010 | ploss=-0.08478 | vloss=0.62831 | entropy=-3.42650 | reward=0.33931
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_400.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_405.ckpt
+[INFO]  epoch/step=409/4100 | loss=0.54491 | ploss=-0.08177 | vloss=0.63006 | entropy=-3.38522 | reward=0.34174
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_410.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_415.ckpt
+[INFO]  epoch/step=419/4200 | loss=0.55336 | ploss=-0.07665 | vloss=0.63334 | entropy=-3.33770 | reward=0.34419
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_420.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_425.ckpt
+[INFO]  epoch/step=429/4300 | loss=0.55576 | ploss=-0.07562 | vloss=0.63469 | entropy=-3.30718 | reward=0.34637
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_430.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_435.ckpt
+[INFO]  epoch/step=439/4400 | loss=0.54783 | ploss=-0.08335 | vloss=0.63445 | entropy=-3.26882 | reward=0.34519
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_440.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_445.ckpt
+[INFO]  epoch/step=449/4500 | loss=0.55556 | ploss=-0.07697 | vloss=0.63576 | entropy=-3.23266 | reward=0.34684
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_450.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_455.ckpt
+[INFO]  epoch/step=459/4600 | loss=0.56067 | ploss=-0.07365 | vloss=0.63751 | entropy=-3.19362 | reward=0.34825
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_460.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_465.ckpt
+[INFO]  epoch/step=469/4700 | loss=0.56380 | ploss=-0.07208 | vloss=0.63904 | entropy=-3.15940 | reward=0.34957
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_470.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_475.ckpt
+[INFO]  epoch/step=479/4800 | loss=0.56671 | ploss=-0.07056 | vloss=0.64039 | entropy=-3.11820 | reward=0.35053
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_480.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_485.ckpt
+[INFO]  epoch/step=489/4900 | loss=0.57169 | ploss=-0.06718 | vloss=0.64196 | entropy=-3.08261 | reward=0.35215
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_490.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_495.ckpt
+[INFO]  epoch/step=499/5000 | loss=0.56592 | ploss=-0.07229 | vloss=0.64127 | entropy=-3.05338 | reward=0.35104
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/baseline/pre_baseline_lr1e-04_g_aiu_0_10_300/policy_model_epoch_500.ckpt
+[INFO]  current time = 20210614-130941

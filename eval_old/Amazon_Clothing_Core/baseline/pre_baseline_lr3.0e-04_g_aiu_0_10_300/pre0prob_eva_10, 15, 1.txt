@@ -1,0 +1,34 @@
+Epoch = 70, top_k = 10 sort by prob10, 15, 1
+NDCG=1.888 |  Recall=3.025 | HR=7.919 | Precision=0.903 | Invalid users=0 | cum_k=24
+total_pro_num = 93873 len(total_pre_user_num) = 10228 avg product num = 9.178040672663277
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 20 sort by prob10, 15, 1
+NDCG=2.319 |  Recall=4.285 | HR=10.892 | Precision=0.816 | Invalid users=0 | cum_k=24
+total_pro_num = 146532 len(total_pre_user_num) = 10228 avg product num = 14.326554556120454
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 25 sort by prob10, 15, 1
+NDCG=2.367 |  Recall=4.440 | HR=11.283 | Precision=0.800 | Invalid users=0 | cum_k=24
+total_pro_num = 156922 len(total_pre_user_num) = 10228 avg product num = 15.342393429800547
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 50 sort by prob10, 15, 1
+NDCG=2.399 |  Recall=4.560 | HR=11.547 | Precision=0.794 | Invalid users=0 | cum_k=24
+total_pro_num = 163950 len(total_pre_user_num) = 10228 avg product num = 16.029526789206102
+total user num = 10228 total total_pre_user_num num  = 10228
+**************************************************
+Epoch = 70, top_k = 10 sort by prob10, 15, 1
+NDCG=1.888 |  Recall=3.025 | HR=7.919 | Precision=0.903 | Invalid users=0 | cum_k=24
+total_pro_num = 93873 len(total_pre_user_num) = 10228 avg product num = 9.178040672663277
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 20 sort by prob10, 15, 1
+NDCG=2.319 |  Recall=4.285 | HR=10.892 | Precision=0.816 | Invalid users=0 | cum_k=24
+total_pro_num = 146532 len(total_pre_user_num) = 10228 avg product num = 14.326554556120454
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 25 sort by prob10, 15, 1
+NDCG=2.367 |  Recall=4.440 | HR=11.283 | Precision=0.800 | Invalid users=0 | cum_k=24
+total_pro_num = 156922 len(total_pre_user_num) = 10228 avg product num = 15.342393429800547
+total user num = 10228 total total_pre_user_num num  = 10228
+Epoch = 70, top_k = 50 sort by prob10, 15, 1
+NDCG=2.399 |  Recall=4.560 | HR=11.547 | Precision=0.794 | Invalid users=0 | cum_k=24
+total_pro_num = 163950 len(total_pre_user_num) = 10228 avg product num = 16.029526789206102
+total user num = 10228 total total_pre_user_num num  = 10228
+**************************************************

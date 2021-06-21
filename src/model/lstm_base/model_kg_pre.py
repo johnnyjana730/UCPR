@@ -134,15 +134,23 @@ class RW_KGE_pretrained(nn.Module):
         self.embed_size = args.embed_size
         self.device = args.device
 
+        # self.embeds = load_embed(args.dataset, logger = args.logger)
+
+        # if args.load_pt_emb_size == True:
+        #     try:
+        #         self.embeds = load_embed_dim(args.dataset, args.embed_size, logger = args.logger)
+        #         print('self.embeds = load_embed(load_embed_dim) = ')
+        #         args.logger.info('self.embeds = load_embed(load_embed_dim')
+        #     except:
+        #         pass
+
+        # try:
+        #     self.embeds = load_embed_dim(args.dataset, args.embed_size)
+        #     print('self.embeds = load_embed(load_embed_dim) = ')
+        #     args.logger.info('self.embeds = load_embed(load_embed_dim')
+        # except:
         self.embeds = load_embed(args.dataset, logger = args.logger)
 
-        if args.load_pt_emb_size == True:
-            try:
-                self.embeds = load_embed_dim(args.dataset, args.embed_size, logger = args.logger)
-                print('self.embeds = load_embed(load_embed_dim) = ')
-                args.logger.info('self.embeds = load_embed(load_embed_dim')
-            except:
-                pass
 
         # Initialize entity embeddings.
         self.entities = edict(

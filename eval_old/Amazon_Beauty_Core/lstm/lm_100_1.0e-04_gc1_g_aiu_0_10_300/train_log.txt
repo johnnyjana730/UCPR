@@ -1,0 +1,38 @@
+[INFO]  load dataset_file = ../data/Amazon_Beauty_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Beauty_Core/transe_embed.pkl
+[INFO]   name = kg_emb True name = state_lstm True name = transfor_state True name = state_tr_query True name = l1 True name = l2 True name = actor True name = critic True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='beauty_core', device=device(type='cuda', index=0), embed_size=16, ent_weight=0.001, env_old=False, envir='p1', epochs=100, eva_epochs=0, gamma=0.99, gp_setting='6000_800_15_500_250', gpu='0', grad_check=True, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=10, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=0.5, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300', logger=<Logger ../eval/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/train_log.txt (DEBUG)>, lr=0.0001, max_acts=50, max_path_len=3, model='lstm', mv_test=False, n_memory=64, name='lm_100_1.0e-04_gc1', non_sampling=True, p_hop=2, pretest=False, pretrained_dir='../eva_pre/Amazon_Beauty_Core/pretrained/emb_szie_16', pretrained_st_epoch=0, reasoning_step=2, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300', save_pretrain_model=False, seed=52, sort_by='score', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[10, 15, 1], topk_list=[1, 10, 150, 100], topk_string='10, 15, 1', training=True, tri_pro_rm=False, tri_wd_rm=False, user_core=300, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  8300
+[INFO]  Parameters:['kg_emb.self_loop', 'kg_emb.purchase', 'kg_emb.mentions', 'kg_emb.described_as', 'kg_emb.produced_by', 'kg_emb.belongs_to', 'kg_emb.also_bought', 'kg_emb.also_viewed', 'kg_emb.bought_together', 'kg_emb.padding', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.word.weight', 'kg_emb.related_product.weight', 'kg_emb.brand.weight', 'kg_emb.category.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.mentions_bias.weight', 'kg_emb.described_as_bias.weight', 'kg_emb.produced_by_bias.weight', 'kg_emb.belongs_to_bias.weight', 'kg_emb.also_bought_bias.weight', 'kg_emb.also_viewed_bias.weight', 'kg_emb.bought_together_bias.weight', 'kg_emb.padding_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'transfor_state.weight', 'transfor_state.bias', 'state_tr_query.weight', 'state_tr_query.bias', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias']
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_5.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_10.ckpt
+[INFO]  epoch/step=11/100 | loss=-0.23429 | ploss=-0.27800 | vloss=0.05194 | entropy=-9.32309 | reward=0.01221
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_15.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_20.ckpt
+[INFO]  epoch/step=22/200 | loss=0.02606 | ploss=-0.03350 | vloss=0.06761 | entropy=-9.13305 | reward=0.01947
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_25.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_30.ckpt
+[INFO]  epoch/step=33/300 | loss=0.07978 | ploss=-0.02467 | vloss=0.11206 | entropy=-8.69514 | reward=0.03436
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_35.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_40.ckpt
+[INFO]  epoch/step=44/400 | loss=0.12223 | ploss=-0.06929 | vloss=0.19836 | entropy=-7.91876 | reward=0.06377
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_45.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_50.ckpt
+[INFO]  epoch/step=55/500 | loss=0.15747 | ploss=-0.14169 | vloss=0.30505 | entropy=-6.97603 | reward=0.10611
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_55.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=66/600 | loss=0.21407 | ploss=-0.15802 | vloss=0.37727 | entropy=-6.26599 | reward=0.13746
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_75.ckpt
+[INFO]  epoch/step=77/700 | loss=0.24126 | ploss=-0.17049 | vloss=0.41648 | entropy=-5.81323 | reward=0.15303
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_80.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=88/800 | loss=0.25062 | ploss=-0.18483 | vloss=0.43991 | entropy=-5.54332 | reward=0.16407
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/900 | loss=0.27135 | ploss=-0.17075 | vloss=0.44640 | entropy=-5.38506 | reward=0.16780
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_100.ckpt
+[INFO]  current time = 20210618-060838

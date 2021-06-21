@@ -10,7 +10,7 @@ then
     model='UCPR'
     gp_setting="6_800_15_500_50"
     lr=1.0e-04
-    lambda_num=1.0
+    lambda_num=0.5
     n_memory=64
     p_hop=2
     reasoning_step=2
@@ -32,8 +32,8 @@ then
     model='UCPR'
     gp_setting="6_800_15_500_50"
     lr=1.0e-04
-    lambda_num=0.3
-    n_memory=32
+    lambda_num=0.5
+    n_memory=64
     p_hop=2
     reasoning_step=2
     embed_size=16
@@ -50,7 +50,7 @@ load_pretrain_model=0
 grad_check=0
 
 
-exp_name=${epochs}_${batch_size}nopre_rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}
+exp_name=UCPR_${epochs}_${batch_size}nopre_rm_w${tri_wd_rm}_p${tri_pro_rm}_${lr}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
     --lr ${lr}  --embed_size ${embed_size} --n_memory ${n_memory}  --tri_wd_rm ${tri_wd_rm} --tri_pro_rm ${tri_pro_rm} --KGE_pretrained ${KGE_pretrained} \

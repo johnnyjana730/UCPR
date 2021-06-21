@@ -1,0 +1,39 @@
+[INFO]  load dataset_file = ../data/Amazon_Clothing_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Clothing_Core/transe_embed.pkl
+[INFO]   name = kg_emb True name = state_lstm True name = transfor_state True name = state_tr_query True name = l1 True name = l2 True name = actor True name = critic True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='cloth_core', device=device(type='cuda', index=0), embed_size=16, ent_weight=0.001, env_old=False, envir='p1', epochs=100, eva_epochs=0, gamma=0.99, gp_setting='6000_800_15_500_250', gpu='0', grad_check=True, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=10, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=0.3, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300', logger=<Logger ../eval/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/train_log.txt (DEBUG)>, lr=0.0001, max_acts=50, max_path_len=3, model='lstm', mv_test=False, n_memory=32, name='lm_100_1.0e-04_gc1', non_sampling=True, p_hop=2, pretest=False, pretrained_dir='../eva_pre/Amazon_Clothing_Core/pretrained/emb_szie_16', pretrained_st_epoch=0, reasoning_step=2, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300', save_pretrain_model=False, seed=52, sort_by='score', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[10, 15, 1], topk_list=[1, 10, 150, 100], topk_string='10, 15, 1', training=True, tri_pro_rm=False, tri_wd_rm=False, user_core=300, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  10228
+[INFO]  Parameters:['kg_emb.self_loop', 'kg_emb.purchase', 'kg_emb.mentions', 'kg_emb.described_as', 'kg_emb.produced_by', 'kg_emb.belongs_to', 'kg_emb.also_bought', 'kg_emb.also_viewed', 'kg_emb.bought_together', 'kg_emb.padding', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.word.weight', 'kg_emb.related_product.weight', 'kg_emb.brand.weight', 'kg_emb.category.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.mentions_bias.weight', 'kg_emb.described_as_bias.weight', 'kg_emb.produced_by_bias.weight', 'kg_emb.belongs_to_bias.weight', 'kg_emb.also_bought_bias.weight', 'kg_emb.also_viewed_bias.weight', 'kg_emb.bought_together_bias.weight', 'kg_emb.padding_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'transfor_state.weight', 'transfor_state.bias', 'state_tr_query.weight', 'state_tr_query.bias', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias']
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_5.ckpt
+[INFO]  epoch/step=9/100 | loss=-0.01479 | ploss=-0.02456 | vloss=0.01790 | entropy=-9.40159 | reward=0.00437
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_10.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_15.ckpt
+[INFO]  epoch/step=19/200 | loss=-0.00138 | ploss=-0.01457 | vloss=0.02123 | entropy=-9.32387 | reward=0.00628
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_20.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_25.ckpt
+[INFO]  epoch/step=29/300 | loss=0.00795 | ploss=-0.01398 | vloss=0.02975 | entropy=-9.10270 | reward=0.00960
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_30.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_35.ckpt
+[INFO]  epoch/step=39/400 | loss=0.04176 | ploss=-0.03918 | vloss=0.08803 | entropy=-8.36559 | reward=0.03138
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_40.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_45.ckpt
+[INFO]  epoch/step=49/500 | loss=0.17457 | ploss=-0.18381 | vloss=0.36366 | entropy=-6.54619 | reward=0.15874
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_50.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_55.ckpt
+[INFO]  epoch/step=59/600 | loss=0.27978 | ploss=-0.28582 | vloss=0.56944 | entropy=-5.10680 | reward=0.29067
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=69/700 | loss=0.33529 | ploss=-0.27846 | vloss=0.61705 | entropy=-4.56987 | reward=0.33385
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_75.ckpt
+[INFO]  epoch/step=79/800 | loss=0.36757 | ploss=-0.26107 | vloss=0.63173 | entropy=-4.36350 | reward=0.35021
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_80.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=89/900 | loss=0.37481 | ploss=-0.25952 | vloss=0.63732 | entropy=-4.25939 | reward=0.35721
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/1000 | loss=0.38921 | ploss=-0.24923 | vloss=0.64136 | entropy=-4.19601 | reward=0.36335
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/lstm/lm_100_1.0e-04_gc1_g_aiu_0_10_300/policy_model_epoch_100.ckpt
+[INFO]  current time = 20210618-090651

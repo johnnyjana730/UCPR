@@ -1,0 +1,216 @@
+[INFO]  self.embeds = load_embed(load_embed_dim
+[INFO]   name = kg_emb True name = state_lstm True name = transfor_state True name = state_tr_query True name = l1 True name = l2 True name = actor True name = critic True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='MovieLens-1M_core', device=device(type='cuda', index=0), embed_size=32, ent_weight=0.001, env_old=False, envir='p2', epochs=800, eva_epochs=0, gamma=0.99, gp_setting='6000_800_15_500_50', gpu='0', grad_check=False, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=0, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=2.0, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000', logger=<Logger ../eval/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/train_log.txt (DEBUG)>, lr=0.0002, max_acts=50, max_path_len=3, model='lstm', mv_test=False, n_memory=64, name='3_ba1024lstm_8002e-04_sveb32_kge0', non_sampling=True, p_hop=2, pretest=False, pretrained_dir='../eva_pre/MovieLens-1M_Core/pretrained/g_aiu_0_0_6000', pretrained_st_epoch=0, reasoning_step=4, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000', save_pretrain_model=False, seed=52, sort_by='prob', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[8, 3, 4], topk_list=[1, 8, 24, 96], topk_string='8, 3, 4', training=True, tri_pro_rm=False, tri_wd_rm=False, user_core=6000, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  6000
+[INFO]  Parameters:['kg_emb.1', 'kg_emb.4', 'kg_emb.padding', 'kg_emb.8', 'kg_emb.9', 'kg_emb.self_loop', 'kg_emb.3', 'kg_emb.6', 'kg_emb.5', 'kg_emb.7', 'kg_emb.10', 'kg_emb.purchase', 'kg_emb.0', 'kg_emb.11', 'kg_emb.2', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.attribute.weight', 'kg_emb.1_bias.weight', 'kg_emb.4_bias.weight', 'kg_emb.padding_bias.weight', 'kg_emb.8_bias.weight', 'kg_emb.9_bias.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.3_bias.weight', 'kg_emb.6_bias.weight', 'kg_emb.5_bias.weight', 'kg_emb.7_bias.weight', 'kg_emb.10_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.0_bias.weight', 'kg_emb.11_bias.weight', 'kg_emb.2_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'transfor_state.weight', 'transfor_state.bias', 'state_tr_query.weight', 'state_tr_query.bias', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias']
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_5.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_10.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_15.ckpt
+[INFO]  epoch/step=16/100 | loss=0.15809 | ploss=0.00570 | vloss=0.16034 | entropy=-8.40354 | reward=0.05639
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_20.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_25.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_30.ckpt
+[INFO]  epoch/step=33/200 | loss=0.28120 | ploss=-0.00984 | vloss=0.29793 | entropy=-7.34883 | reward=0.11461
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_35.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_40.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_45.ckpt
+[INFO]  epoch/step=49/300 | loss=0.36474 | ploss=-0.01077 | vloss=0.38135 | entropy=-6.29516 | reward=0.15607
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_50.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_55.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=66/400 | loss=0.39143 | ploss=-0.00548 | vloss=0.40225 | entropy=-5.79668 | reward=0.16874
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_75.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_80.ckpt
+[INFO]  epoch/step=83/500 | loss=0.41124 | ploss=-0.00072 | vloss=0.41703 | entropy=-5.52400 | reward=0.17814
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_85.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/600 | loss=0.41172 | ploss=-0.00547 | vloss=0.42214 | entropy=-5.39638 | reward=0.18072
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_100.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_105.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_110.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_115.ckpt
+[INFO]  epoch/step=116/700 | loss=0.42077 | ploss=-0.00038 | vloss=0.42602 | entropy=-5.32417 | reward=0.18394
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_120.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_125.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_130.ckpt
+[INFO]  epoch/step=133/800 | loss=0.42314 | ploss=-0.00529 | vloss=0.43324 | entropy=-5.25446 | reward=0.18827
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_135.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_140.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_145.ckpt
+[INFO]  epoch/step=149/900 | loss=0.42587 | ploss=-0.00746 | vloss=0.43807 | entropy=-5.18118 | reward=0.19047
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_150.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_155.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_160.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_165.ckpt
+[INFO]  epoch/step=166/1000 | loss=0.43760 | ploss=-0.00366 | vloss=0.44596 | entropy=-5.14086 | reward=0.19488
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_170.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_175.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_180.ckpt
+[INFO]  epoch/step=183/1100 | loss=0.43148 | ploss=-0.01089 | vloss=0.44704 | entropy=-5.11358 | reward=0.19541
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_185.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_190.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_195.ckpt
+[INFO]  epoch/step=199/1200 | loss=0.43130 | ploss=-0.01655 | vloss=0.45249 | entropy=-5.09224 | reward=0.19962
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_200.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_205.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_210.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_215.ckpt
+[INFO]  epoch/step=216/1300 | loss=0.43807 | ploss=-0.02204 | vloss=0.46471 | entropy=-5.03637 | reward=0.20643
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_220.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_225.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_230.ckpt
+[INFO]  epoch/step=233/1400 | loss=0.43660 | ploss=-0.02554 | vloss=0.46666 | entropy=-4.96657 | reward=0.20873
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_235.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_240.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_245.ckpt
+[INFO]  epoch/step=249/1500 | loss=0.43553 | ploss=-0.02858 | vloss=0.46860 | entropy=-4.92607 | reward=0.21054
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_250.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_255.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_260.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_265.ckpt
+[INFO]  epoch/step=266/1600 | loss=0.44063 | ploss=-0.02606 | vloss=0.47111 | entropy=-4.86886 | reward=0.21224
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_270.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_275.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_280.ckpt
+[INFO]  epoch/step=283/1700 | loss=0.44232 | ploss=-0.02873 | vloss=0.47544 | entropy=-4.83766 | reward=0.21591
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_285.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_290.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_295.ckpt
+[INFO]  epoch/step=299/1800 | loss=0.44296 | ploss=-0.02813 | vloss=0.47545 | entropy=-4.80468 | reward=0.21702
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_300.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_305.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_310.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_315.ckpt
+[INFO]  epoch/step=316/1900 | loss=0.43363 | ploss=-0.03882 | vloss=0.47679 | entropy=-4.78235 | reward=0.21807
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_320.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_325.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_330.ckpt
+[INFO]  epoch/step=333/2000 | loss=0.43193 | ploss=-0.04166 | vloss=0.47789 | entropy=-4.74783 | reward=0.21897
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_335.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_340.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_345.ckpt
+[INFO]  epoch/step=349/2100 | loss=0.43433 | ploss=-0.04150 | vloss=0.48009 | entropy=-4.70125 | reward=0.22164
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_350.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_355.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_360.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_365.ckpt
+[INFO]  epoch/step=366/2200 | loss=0.43704 | ploss=-0.04113 | vloss=0.48239 | entropy=-4.66918 | reward=0.22329
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_370.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_375.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_380.ckpt
+[INFO]  epoch/step=383/2300 | loss=0.43175 | ploss=-0.04697 | vloss=0.48293 | entropy=-4.66233 | reward=0.22351
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_385.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_390.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_395.ckpt
+[INFO]  epoch/step=399/2400 | loss=0.43767 | ploss=-0.04204 | vloss=0.48391 | entropy=-4.65108 | reward=0.22415
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_400.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_405.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_410.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_415.ckpt
+[INFO]  epoch/step=416/2500 | loss=0.44391 | ploss=-0.03617 | vloss=0.48428 | entropy=-4.64199 | reward=0.22579
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_420.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_425.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_430.ckpt
+[INFO]  epoch/step=433/2600 | loss=0.43591 | ploss=-0.04756 | vloss=0.48766 | entropy=-4.64031 | reward=0.22757
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_435.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_440.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_445.ckpt
+[INFO]  epoch/step=449/2700 | loss=0.43199 | ploss=-0.04879 | vloss=0.48497 | entropy=-4.62742 | reward=0.22685
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_450.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_455.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_460.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_465.ckpt
+[INFO]  epoch/step=466/2800 | loss=0.43600 | ploss=-0.04611 | vloss=0.48628 | entropy=-4.61021 | reward=0.22814
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_470.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_475.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_480.ckpt
+[INFO]  epoch/step=483/2900 | loss=0.43430 | ploss=-0.04985 | vloss=0.48830 | entropy=-4.59937 | reward=0.22880
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_485.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_490.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_495.ckpt
+[INFO]  epoch/step=499/3000 | loss=0.43612 | ploss=-0.04800 | vloss=0.48828 | entropy=-4.60253 | reward=0.22911
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_500.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_505.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_510.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_515.ckpt
+[INFO]  epoch/step=516/3100 | loss=0.44243 | ploss=-0.04682 | vloss=0.49340 | entropy=-4.59783 | reward=0.23269
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_520.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_525.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_530.ckpt
+[INFO]  epoch/step=533/3200 | loss=0.43088 | ploss=-0.05596 | vloss=0.49098 | entropy=-4.58855 | reward=0.23099
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_535.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_540.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_545.ckpt
+[INFO]  epoch/step=549/3300 | loss=0.43749 | ploss=-0.05205 | vloss=0.49367 | entropy=-4.57049 | reward=0.23247
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_550.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_555.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_560.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_565.ckpt
+[INFO]  epoch/step=566/3400 | loss=0.43670 | ploss=-0.05260 | vloss=0.49342 | entropy=-4.56209 | reward=0.23291
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_570.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_575.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_580.ckpt
+[INFO]  epoch/step=583/3500 | loss=0.43266 | ploss=-0.05651 | vloss=0.49328 | entropy=-4.55588 | reward=0.23212
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_585.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_590.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_595.ckpt
+[INFO]  epoch/step=599/3600 | loss=0.43859 | ploss=-0.05524 | vloss=0.49794 | entropy=-4.55419 | reward=0.23572
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_600.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_605.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_610.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_615.ckpt
+[INFO]  epoch/step=616/3700 | loss=0.43393 | ploss=-0.05843 | vloss=0.49646 | entropy=-4.55410 | reward=0.23468
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_620.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_625.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_630.ckpt
+[INFO]  epoch/step=633/3800 | loss=0.43437 | ploss=-0.05946 | vloss=0.49792 | entropy=-4.53324 | reward=0.23660
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_635.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_640.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_645.ckpt
+[INFO]  epoch/step=649/3900 | loss=0.43711 | ploss=-0.05398 | vloss=0.49516 | entropy=-4.51945 | reward=0.23456
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_650.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_655.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_660.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_665.ckpt
+[INFO]  epoch/step=666/4000 | loss=0.43221 | ploss=-0.05992 | vloss=0.49620 | entropy=-4.51194 | reward=0.23538
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_670.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_675.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_680.ckpt
+[INFO]  epoch/step=683/4100 | loss=0.43235 | ploss=-0.05996 | vloss=0.49638 | entropy=-4.51542 | reward=0.23559
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_685.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_690.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_695.ckpt
+[INFO]  epoch/step=699/4200 | loss=0.43962 | ploss=-0.05648 | vloss=0.50015 | entropy=-4.49323 | reward=0.23828
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_700.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_705.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_710.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_715.ckpt
+[INFO]  epoch/step=716/4300 | loss=0.43744 | ploss=-0.06008 | vloss=0.50157 | entropy=-4.49834 | reward=0.23973
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_720.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_725.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_730.ckpt
+[INFO]  epoch/step=733/4400 | loss=0.43132 | ploss=-0.06563 | vloss=0.50098 | entropy=-4.48495 | reward=0.23835
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_735.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_740.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_745.ckpt
+[INFO]  epoch/step=749/4500 | loss=0.43803 | ploss=-0.05864 | vloss=0.50069 | entropy=-4.47122 | reward=0.23873
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_750.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_755.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_760.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_765.ckpt
+[INFO]  epoch/step=766/4600 | loss=0.43992 | ploss=-0.05999 | vloss=0.50395 | entropy=-4.49142 | reward=0.24064
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_770.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_775.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_780.ckpt
+[INFO]  epoch/step=783/4700 | loss=0.43601 | ploss=-0.06337 | vloss=0.50342 | entropy=-4.48742 | reward=0.24153
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_785.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_790.ckpt
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_795.ckpt
+[INFO]  epoch/step=799/4800 | loss=0.44267 | ploss=-0.05560 | vloss=0.50230 | entropy=-4.48252 | reward=0.24053
+[INFO]  Save model to ../sv_model/MovieLens-1M_Core/lstm/3_ba1024lstm_8002e-04_sveb32_kge0_g_aiu_0_0_6000/policy_model_epoch_800.ckpt
+[INFO]  current time = 20210620-203028

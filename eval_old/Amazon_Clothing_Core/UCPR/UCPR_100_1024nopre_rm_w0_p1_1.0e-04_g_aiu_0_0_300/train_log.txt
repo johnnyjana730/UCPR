@@ -1,0 +1,41 @@
+[INFO]  load dataset_file = ../data/Amazon_Clothing_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Clothing_Core/transe_embed.pkl
+[INFO]  load dataset_file = ../data/Amazon_Clothing_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Clothing_Core/transe_embed.pkl
+[INFO]   name = kg_emb True name = state_lstm True name = l1 True name = l2 True name = actor True name = critic True name = dummy_rela_emb True name = relation_emb True name = update_us_tr True name = cal_state_prop True name = rn_state_tr_query True name = update_rn_state True name = rn_query_st_tr True name = rh_query True name = o_r_query True name = v_query True name = t_u_query True name = rn_cal_state_prop True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='cloth_core', device=device(type='cuda', index=0), embed_size=16, ent_weight=0.001, env_old=False, envir='p1', epochs=100, eva_epochs=0, gamma=0.99, gp_setting='6_800_15_500_50', gpu='0', grad_check=False, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=0, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=0.5, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300', logger=<Logger ../eval/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/train_log.txt (DEBUG)>, lr=0.0001, max_acts=50, max_path_len=3, model='UCPR', mv_test=False, n_memory=64, name='UCPR_100_1024nopre_rm_w0_p1_1.0e-04', non_sampling=False, p_hop=2, pretest=False, pretrained_dir='../eva_pre/Amazon_Clothing_Core/pretrained/emb_szie_16', pretrained_st_epoch=0, reasoning_step=2, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300', save_pretrain_model=False, seed=52, sort_by='score', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[10, 15, 1], topk_list=[1, 10, 150, 100], topk_string='10, 15, 1', training=True, tri_pro_rm=True, tri_wd_rm=False, user_core=300, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  10228
+[INFO]  Parameters:['scalar', 'kg_emb.self_loop', 'kg_emb.purchase', 'kg_emb.mentions', 'kg_emb.described_as', 'kg_emb.produced_by', 'kg_emb.belongs_to', 'kg_emb.also_bought', 'kg_emb.also_viewed', 'kg_emb.bought_together', 'kg_emb.padding', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.word.weight', 'kg_emb.related_product.weight', 'kg_emb.brand.weight', 'kg_emb.category.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.mentions_bias.weight', 'kg_emb.described_as_bias.weight', 'kg_emb.produced_by_bias.weight', 'kg_emb.belongs_to_bias.weight', 'kg_emb.also_bought_bias.weight', 'kg_emb.also_viewed_bias.weight', 'kg_emb.bought_together_bias.weight', 'kg_emb.padding_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias', 'dummy_rela_emb.weight', 'relation_emb.weight', 'update_us_tr.0.weight', 'update_us_tr.0.bias', 'update_us_tr.1.weight', 'update_us_tr.1.bias', 'cal_state_prop.weight', 'cal_state_prop.bias', 'rn_state_tr_query.0.weight', 'rn_state_tr_query.0.bias', 'rn_state_tr_query.1.weight', 'rn_state_tr_query.1.bias', 'update_rn_state.0.weight', 'update_rn_state.0.bias', 'update_rn_state.1.weight', 'update_rn_state.1.bias', 'rn_query_st_tr.0.weight', 'rn_query_st_tr.0.bias', 'rn_query_st_tr.1.weight', 'rn_query_st_tr.1.bias', 'rh_query.0.weight', 'rh_query.1.weight', 'o_r_query.0.weight', 'o_r_query.1.weight', 'v_query.0.weight', 'v_query.1.weight', 't_u_query.0.weight', 't_u_query.1.weight', 'rn_cal_state_prop.weight']
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_5.ckpt
+[INFO]  epoch/step=9/100 | loss=0.27288 | ploss=0.24928 | vloss=0.02713 | entropy=-9.38507 | reward=0.00424
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_10.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_15.ckpt
+[INFO]  epoch/step=19/200 | loss=0.07942 | ploss=0.05756 | vloss=0.02537 | entropy=-9.36988 | reward=0.00576
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_20.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_25.ckpt
+[INFO]  epoch/step=29/300 | loss=0.07327 | ploss=0.04453 | vloss=0.03219 | entropy=-9.30940 | reward=0.00883
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_30.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_35.ckpt
+[INFO]  epoch/step=39/400 | loss=0.08396 | ploss=-0.00335 | vloss=0.09034 | entropy=-8.88457 | reward=0.03028
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_40.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_45.ckpt
+[INFO]  epoch/step=49/500 | loss=0.09173 | ploss=-0.18176 | vloss=0.27480 | entropy=-7.15044 | reward=0.10412
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_50.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_55.ckpt
+[INFO]  epoch/step=59/600 | loss=0.15334 | ploss=-0.21989 | vloss=0.37332 | entropy=-5.93684 | reward=0.14733
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=69/700 | loss=0.18608 | ploss=-0.21723 | vloss=0.40302 | entropy=-5.55323 | reward=0.16176
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_75.ckpt
+[INFO]  epoch/step=79/800 | loss=0.20247 | ploss=-0.21055 | vloss=0.41258 | entropy=-5.40380 | reward=0.16660
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_80.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=89/900 | loss=0.21741 | ploss=-0.20446 | vloss=0.42134 | entropy=-5.30809 | reward=0.17106
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/1000 | loss=0.21108 | ploss=-0.21451 | vloss=0.42500 | entropy=-5.24976 | reward=0.17322
+[INFO]  Save model to ../sv_model/Amazon_Clothing_Core/UCPR/UCPR_100_1024nopre_rm_w0_p1_1.0e-04_g_aiu_0_0_300/policy_model_epoch_100.ckpt
+[INFO]  current time = 20210616-183118

@@ -14,7 +14,7 @@ then
     p_hop=2
     reasoning_step=3
     embed_size=32
-    kg_emb_grad=1
+    kg_emb_grad=0
     batch_size=32
     epochs=300
 elif [ $2 = "mv" ]
@@ -40,7 +40,7 @@ KGE_pretrained=1
 load_pretrain_model=0
 save_pretrain_model=1
 
-exp_name=ba${batch_size}lstm_${epochs}${lr}_sveb${embed_size}_kge${kg_emb_grad}
+exp_name=3_ba${batch_size}lstm_${epochs}${lr}_sveb${embed_size}_kge${kg_emb_grad}
 
 cmd="python3 ../src/${train_file} --reasoning_step ${reasoning_step} --batch_size ${batch_size} --name ${exp_name} \
    --lr ${lr} --embed_size ${embed_size} --n_memory ${n_memory}  \
@@ -59,7 +59,7 @@ epochs=200
 reasoning_step=5
 batch_size=32
 
-exp_name=ba${batch_size}_${lambda_num}_rn${reasoning_step}_${lr}
+exp_name=3_ba${batch_size}_${lambda_num}_rn${reasoning_step}_${lr}
 
 load_pretrain_model=1
 
@@ -81,7 +81,7 @@ epochs=200
 reasoning_step=4
 batch_size=32
 
-exp_name=ba${batch_size}_${lambda_num}_rn${reasoning_step}_${lr}
+exp_name=3_ba${batch_size}_${lambda_num}_rn${reasoning_step}_${lr}
 
 load_pretrain_model=1
 

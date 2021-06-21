@@ -7,7 +7,7 @@ export PYTHONPATH="../"
 if [ $2 = "cell" ]
 then
     dataset_name='cell_core'
-    lr=1e-04
+    lr=0.7e-04
     embed_size=16
 elif [ $2 = "bu" ]
 then
@@ -38,7 +38,7 @@ model=baseline
 epochs=500
 KGE_pretrained=1
 kg_emb_grad=0
-exp_name=pre_baseline_lr${lr}
+exp_name=lr${lr}
 
 cmd="python3 ../src/${train_file} --batch_size ${batch_size} --name ${exp_name}  \
    --lr ${lr}  --embed_size ${embed_size}  --epochs ${epochs} --KGE_pretrained ${KGE_pretrained} \

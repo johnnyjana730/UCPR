@@ -125,6 +125,11 @@ def _rw_get_user_triplet_set(user, history, p_hop=2, KG_RELATION = None, n_memor
             next_node_type = KG_RELATION[entity_type][k_]
             if next_node_type in remove_type: print('next_node_type remove == ', remove_type, end='\r'); continue
 
+            if WORD in remove_type:
+                if k_ == 'mentions' or k_ == 'described_as' or  k_ == 'also_viewed': 
+                    print('next_node_type remove == ', k_, end='\r')
+                    continue
+
             if next_node_type == USER:
                 for v_ in v_set:
                     if v_ in g_args.sp_user_filter:  next_entities.append([k_,v_])
@@ -140,7 +145,7 @@ def _rw_get_user_triplet_set(user, history, p_hop=2, KG_RELATION = None, n_memor
     if g_args.tri_wd_rm == True: 
         remove_type = [WORD]
     elif g_args.tri_pro_rm == True: 
-        remove_type = [PRODUCT, RPRODUCT]
+        remove_type = [PRODUCT]
     else: 
         remove_type = []
 

@@ -1,0 +1,154 @@
+[INFO]  load dataset_file = ../data/Amazon_Beauty_Core/dataset.pkl
+[INFO]  load embed_file = ../data/Amazon_Beauty_Core/transe_embed.pkl
+[INFO]   name = kg_emb True name = state_lstm True name = transfor_state True name = state_tr_query True name = l1 True name = l2 True name = actor True name = critic True
+[INFO]  Namespace(KGE_pretrained=True, act_dropout=0.5, add_products=False, att_core=0, att_evaluation=False, batch_size=1024, best_model_epoch=0, best_save_model_dir='', core_user_list='', dataset='beauty_core', device=device(type='cuda', index=0), embed_size=16, ent_weight=0.001, env_old=False, envir='p1', epochs=500, eva_epochs=0, gamma=0.99, gp_setting='6000_800_15_500_250', gpu='0', grad_check=False, gradient_plot='gradient_plot/', h0_embbed=0, hidden=[64, 32], item_core=10, kg_emb_grad=False, kg_fre_dict='', kg_fre_lower=15, kg_fre_upper=500, kg_no_grad=False, kg_old=False, l2_lambda=0, l2_weight=1e-06, lambda_num=0.5, load_pretrain_model=False, load_pt_emb_size=False, log_dir='../eval/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300', logger=<Logger ../eval/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/train_log.txt (DEBUG)>, lr=0.0003, max_acts=50, max_path_len=3, model='baseline', mv_test=False, n_memory=32, name='pre_baseline_lr3.0e-04', non_sampling=False, p_hop=1, pretest=False, pretrained_dir='../eva_pre/Amazon_Beauty_Core/pretrained/emb_szie_16', pretrained_st_epoch=0, reasoning_step=3, reward_hybrid=False, reward_rh='', run_eval=True, run_path=True, sam_type='alet', save_model_dir='../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300', save_pretrain_model=False, seed=52, sort_by='score', sp_user_filter='', state_history=1, state_rg=False, sub_batch_size=1, test_lstm_up=True, topk=[10, 15, 1], topk_list=[1, 10, 150, 100], topk_string='10, 15, 1', training=True, tri_pro_rm=False, tri_wd_rm=False, user_core=300, user_core_th=6, user_o=False)
+[INFO]  valid user = 
+[INFO]  8300
+[INFO]  Parameters:['kg_emb.self_loop', 'kg_emb.purchase', 'kg_emb.mentions', 'kg_emb.described_as', 'kg_emb.produced_by', 'kg_emb.belongs_to', 'kg_emb.also_bought', 'kg_emb.also_viewed', 'kg_emb.bought_together', 'kg_emb.padding', 'kg_emb.user.weight', 'kg_emb.product.weight', 'kg_emb.word.weight', 'kg_emb.related_product.weight', 'kg_emb.brand.weight', 'kg_emb.category.weight', 'kg_emb.self_loop_bias.weight', 'kg_emb.purchase_bias.weight', 'kg_emb.mentions_bias.weight', 'kg_emb.described_as_bias.weight', 'kg_emb.produced_by_bias.weight', 'kg_emb.belongs_to_bias.weight', 'kg_emb.also_bought_bias.weight', 'kg_emb.also_viewed_bias.weight', 'kg_emb.bought_together_bias.weight', 'kg_emb.padding_bias.weight', 'state_lstm.policy_lstm.lstm.weight_ih_l0', 'state_lstm.policy_lstm.lstm.weight_hh_l0', 'state_lstm.policy_lstm.lstm.bias_ih_l0', 'state_lstm.policy_lstm.lstm.bias_hh_l0', 'transfor_state.weight', 'transfor_state.bias', 'state_tr_query.weight', 'state_tr_query.bias', 'l1.weight', 'l1.bias', 'l2.weight', 'l2.bias', 'actor.weight', 'actor.bias', 'critic.weight', 'critic.bias']
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_0.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_5.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_10.ckpt
+[INFO]  epoch/step=11/100 | loss=-0.01175 | ploss=-0.04654 | vloss=0.04435 | entropy=-9.56372 | reward=0.00943
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_15.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_20.ckpt
+[INFO]  epoch/step=22/200 | loss=0.02062 | ploss=-0.00367 | vloss=0.03385 | entropy=-9.56032 | reward=0.01016
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_25.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_30.ckpt
+[INFO]  epoch/step=33/300 | loss=0.02650 | ploss=0.00085 | vloss=0.03519 | entropy=-9.54557 | reward=0.01070
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_35.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_40.ckpt
+[INFO]  epoch/step=44/400 | loss=0.02554 | ploss=-0.00438 | vloss=0.03943 | entropy=-9.50978 | reward=0.01234
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_45.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_50.ckpt
+[INFO]  epoch/step=55/500 | loss=0.03755 | ploss=-0.01321 | vloss=0.06009 | entropy=-9.32491 | reward=0.01911
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_55.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_60.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_65.ckpt
+[INFO]  epoch/step=66/600 | loss=0.24214 | ploss=-0.03749 | vloss=0.28710 | entropy=-7.46436 | reward=0.11270
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_70.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_75.ckpt
+[INFO]  epoch/step=77/700 | loss=0.40263 | ploss=-0.08630 | vloss=0.49434 | entropy=-5.41922 | reward=0.21975
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_80.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=88/800 | loss=0.41827 | ploss=-0.10629 | vloss=0.52953 | entropy=-4.96019 | reward=0.24054
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_90.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=99/900 | loss=0.43777 | ploss=-0.10276 | vloss=0.54524 | entropy=-4.71292 | reward=0.25018
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_100.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_105.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_110.ckpt
+[INFO]  epoch/step=111/1000 | loss=0.45152 | ploss=-0.09864 | vloss=0.55470 | entropy=-4.53949 | reward=0.25638
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_115.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_120.ckpt
+[INFO]  epoch/step=122/1100 | loss=0.46289 | ploss=-0.09787 | vloss=0.56515 | entropy=-4.38725 | reward=0.26584
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_125.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_130.ckpt
+[INFO]  epoch/step=133/1200 | loss=0.49075 | ploss=-0.08137 | vloss=0.57637 | entropy=-4.25039 | reward=0.27009
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_135.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_140.ckpt
+[INFO]  epoch/step=144/1300 | loss=0.48706 | ploss=-0.09154 | vloss=0.58275 | entropy=-4.15165 | reward=0.27570
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_145.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_150.ckpt
+[INFO]  epoch/step=155/1400 | loss=0.49213 | ploss=-0.09336 | vloss=0.58952 | entropy=-4.02998 | reward=0.28021
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_155.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_160.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_165.ckpt
+[INFO]  epoch/step=166/1500 | loss=0.50953 | ploss=-0.08206 | vloss=0.59551 | entropy=-3.92474 | reward=0.28390
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_170.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_175.ckpt
+[INFO]  epoch/step=177/1600 | loss=0.51137 | ploss=-0.08150 | vloss=0.59669 | entropy=-3.82377 | reward=0.28492
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_180.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_185.ckpt
+[INFO]  epoch/step=188/1700 | loss=0.51708 | ploss=-0.08029 | vloss=0.60111 | entropy=-3.73736 | reward=0.28795
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_190.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_195.ckpt
+[INFO]  epoch/step=199/1800 | loss=0.52364 | ploss=-0.07847 | vloss=0.60576 | entropy=-3.64872 | reward=0.28944
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_200.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_205.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_210.ckpt
+[INFO]  epoch/step=211/1900 | loss=0.54085 | ploss=-0.06473 | vloss=0.60913 | entropy=-3.54720 | reward=0.29213
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_215.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_220.ckpt
+[INFO]  epoch/step=222/2000 | loss=0.54158 | ploss=-0.06755 | vloss=0.61259 | entropy=-3.47275 | reward=0.29564
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_225.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_230.ckpt
+[INFO]  epoch/step=233/2100 | loss=0.55081 | ploss=-0.06240 | vloss=0.61662 | entropy=-3.40755 | reward=0.29982
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_235.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_240.ckpt
+[INFO]  epoch/step=244/2200 | loss=0.55366 | ploss=-0.05996 | vloss=0.61695 | entropy=-3.33340 | reward=0.30006
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_245.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_250.ckpt
+[INFO]  epoch/step=255/2300 | loss=0.55241 | ploss=-0.06029 | vloss=0.61598 | entropy=-3.27661 | reward=0.29887
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_255.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_260.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_265.ckpt
+[INFO]  epoch/step=266/2400 | loss=0.57495 | ploss=-0.04621 | vloss=0.62438 | entropy=-3.22070 | reward=0.30510
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_270.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_275.ckpt
+[INFO]  epoch/step=277/2500 | loss=0.55473 | ploss=-0.06020 | vloss=0.61809 | entropy=-3.16116 | reward=0.30403
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_280.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_285.ckpt
+[INFO]  epoch/step=288/2600 | loss=0.57647 | ploss=-0.04435 | vloss=0.62393 | entropy=-3.10689 | reward=0.30643
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_290.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_295.ckpt
+[INFO]  epoch/step=299/2700 | loss=0.57224 | ploss=-0.04860 | vloss=0.62389 | entropy=-3.05282 | reward=0.30401
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_300.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_305.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_310.ckpt
+[INFO]  epoch/step=311/2800 | loss=0.57653 | ploss=-0.04628 | vloss=0.62582 | entropy=-3.00402 | reward=0.30666
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_315.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_320.ckpt
+[INFO]  epoch/step=322/2900 | loss=0.57609 | ploss=-0.04767 | vloss=0.62670 | entropy=-2.94155 | reward=0.30757
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_325.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_330.ckpt
+[INFO]  epoch/step=333/3000 | loss=0.57499 | ploss=-0.04717 | vloss=0.62505 | entropy=-2.89864 | reward=0.30863
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_335.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_340.ckpt
+[INFO]  epoch/step=344/3100 | loss=0.58811 | ploss=-0.03921 | vloss=0.63018 | entropy=-2.86045 | reward=0.31008
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_345.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_350.ckpt
+[INFO]  epoch/step=355/3200 | loss=0.59086 | ploss=-0.03857 | vloss=0.63224 | entropy=-2.80534 | reward=0.31273
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_355.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_360.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_365.ckpt
+[INFO]  epoch/step=366/3300 | loss=0.58538 | ploss=-0.04141 | vloss=0.62957 | entropy=-2.77312 | reward=0.31005
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_370.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_375.ckpt
+[INFO]  epoch/step=377/3400 | loss=0.59360 | ploss=-0.03444 | vloss=0.63078 | entropy=-2.74048 | reward=0.31130
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_380.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_385.ckpt
+[INFO]  epoch/step=388/3500 | loss=0.58368 | ploss=-0.04452 | vloss=0.63089 | entropy=-2.69356 | reward=0.31100
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_390.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_395.ckpt
+[INFO]  epoch/step=399/3600 | loss=0.60648 | ploss=-0.02449 | vloss=0.63365 | entropy=-2.67493 | reward=0.30920
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_400.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_405.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_410.ckpt
+[INFO]  epoch/step=411/3700 | loss=0.59880 | ploss=-0.03213 | vloss=0.63361 | entropy=-2.68015 | reward=0.31357
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_415.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_420.ckpt
+[INFO]  epoch/step=422/3800 | loss=0.59554 | ploss=-0.03645 | vloss=0.63463 | entropy=-2.64875 | reward=0.31387
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_425.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_430.ckpt
+[INFO]  epoch/step=433/3900 | loss=0.59933 | ploss=-0.03321 | vloss=0.63516 | entropy=-2.62328 | reward=0.31362
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_435.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_440.ckpt
+[INFO]  epoch/step=444/4000 | loss=0.60024 | ploss=-0.03046 | vloss=0.63330 | entropy=-2.59426 | reward=0.31436
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_445.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_450.ckpt
+[INFO]  epoch/step=455/4100 | loss=0.60177 | ploss=-0.02923 | vloss=0.63357 | entropy=-2.56447 | reward=0.31374
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_455.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_460.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_465.ckpt
+[INFO]  epoch/step=466/4200 | loss=0.59923 | ploss=-0.03363 | vloss=0.63539 | entropy=-2.52847 | reward=0.31387
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_470.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_475.ckpt
+[INFO]  epoch/step=477/4300 | loss=0.60047 | ploss=-0.02918 | vloss=0.63216 | entropy=-2.50267 | reward=0.31313
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_480.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_485.ckpt
+[INFO]  epoch/step=488/4400 | loss=0.61458 | ploss=-0.02000 | vloss=0.63707 | entropy=-2.49439 | reward=0.31612
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_490.ckpt
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_495.ckpt
+[INFO]  epoch/step=499/4500 | loss=0.61259 | ploss=-0.02101 | vloss=0.63610 | entropy=-2.49298 | reward=0.31017
+[INFO]  Save model to ../sv_model/Amazon_Beauty_Core/baseline/pre_baseline_lr3.0e-04_g_aiu_0_10_300/policy_model_epoch_500.ckpt
+[INFO]  current time = 20210614-163358
