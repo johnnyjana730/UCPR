@@ -170,3 +170,122 @@
 [INFO]  epoch/step=78/14800 | loss=1.12165 | ploss=0.62099 | vloss=0.50451 | entropy=-4.47627 | reward=0.17156
 [INFO]  epoch/step=79/14900 | loss=0.98326 | ploss=0.54418 | vloss=0.44294 | entropy=-4.48136 | reward=0.15031
 [INFO]  epoch/step=79/15000 | loss=1.11167 | ploss=0.62020 | vloss=0.49532 | entropy=-4.46976 | reward=0.16844
+[INFO]  epoch/step=80/15100 | loss=1.09311 | ploss=0.61173 | vloss=0.48521 | entropy=-4.46043 | reward=0.16344
+[INFO]  epoch/step=80/15200 | loss=1.10889 | ploss=0.62753 | vloss=0.48521 | entropy=-4.47037 | reward=0.16500
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_80.ckpt
+[INFO]  epoch/step=81/15300 | loss=1.08526 | ploss=0.61402 | vloss=0.47511 | entropy=-4.48623 | reward=0.16094
+[INFO]  epoch/step=81/15400 | loss=1.12499 | ploss=0.61969 | vloss=0.50911 | entropy=-4.42551 | reward=0.17313
+[INFO]  epoch/step=82/15500 | loss=1.07603 | ploss=0.59652 | vloss=0.48338 | entropy=-4.48289 | reward=0.16437
+[INFO]  epoch/step=82/15600 | loss=1.10152 | ploss=0.61553 | vloss=0.48981 | entropy=-4.43457 | reward=0.16656
+[INFO]  epoch/step=83/15700 | loss=1.06027 | ploss=0.59178 | vloss=0.47235 | entropy=-4.48040 | reward=0.15969
+[INFO]  epoch/step=84/15800 | loss=1.09503 | ploss=0.60721 | vloss=0.49165 | entropy=-4.45024 | reward=0.16656
+[INFO]  epoch/step=84/15900 | loss=1.14382 | ploss=0.64496 | vloss=0.50268 | entropy=-4.42581 | reward=0.17094
+[INFO]  epoch/step=85/16000 | loss=1.14901 | ploss=0.64004 | vloss=0.51278 | entropy=-4.42854 | reward=0.17281
+[INFO]  epoch/step=85/16100 | loss=1.12956 | ploss=0.61690 | vloss=0.51646 | entropy=-4.41453 | reward=0.17563
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_85.ckpt
+[INFO]  epoch/step=86/16200 | loss=1.15351 | ploss=0.64177 | vloss=0.51554 | entropy=-4.41799 | reward=0.17469
+[INFO]  epoch/step=86/16300 | loss=1.13776 | ploss=0.61581 | vloss=0.52565 | entropy=-4.31729 | reward=0.17875
+[INFO]  epoch/step=87/16400 | loss=1.11368 | ploss=0.61934 | vloss=0.49808 | entropy=-4.35814 | reward=0.16844
+[INFO]  epoch/step=87/16500 | loss=1.16580 | ploss=0.65677 | vloss=0.51278 | entropy=-4.37067 | reward=0.17438
+[INFO]  epoch/step=88/16600 | loss=1.07866 | ploss=0.60092 | vloss=0.48154 | entropy=-4.41824 | reward=0.16312
+[INFO]  epoch/step=88/16700 | loss=1.17695 | ploss=0.65599 | vloss=0.52473 | entropy=-4.38276 | reward=0.17844
+[INFO]  epoch/step=89/16800 | loss=1.09602 | ploss=0.60633 | vloss=0.49349 | entropy=-4.40664 | reward=0.16625
+[INFO]  epoch/step=89/16900 | loss=1.10358 | ploss=0.61018 | vloss=0.49716 | entropy=-4.38330 | reward=0.16906
+[INFO]  epoch/step=90/17000 | loss=1.19768 | ploss=0.68132 | vloss=0.52014 | entropy=-4.38964 | reward=0.17656
+[INFO]  epoch/step=90/17100 | loss=1.02303 | ploss=0.54887 | vloss=0.47786 | entropy=-4.32588 | reward=0.16250
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_90.ckpt
+[INFO]  epoch/step=91/17200 | loss=1.09869 | ploss=0.59972 | vloss=0.50268 | entropy=-4.32060 | reward=0.17000
+[INFO]  epoch/step=92/17300 | loss=1.14903 | ploss=0.64093 | vloss=0.51186 | entropy=-4.37613 | reward=0.17281
+[INFO]  epoch/step=92/17400 | loss=1.09958 | ploss=0.60710 | vloss=0.49624 | entropy=-4.37050 | reward=0.16875
+[INFO]  epoch/step=93/17500 | loss=1.13757 | ploss=0.61838 | vloss=0.52289 | entropy=-4.32195 | reward=0.17781
+[INFO]  epoch/step=93/17600 | loss=1.14093 | ploss=0.62361 | vloss=0.52105 | entropy=-4.35081 | reward=0.17719
+[INFO]  epoch/step=94/17700 | loss=1.08834 | ploss=0.59858 | vloss=0.49349 | entropy=-4.34938 | reward=0.16719
+[INFO]  epoch/step=94/17800 | loss=1.19648 | ploss=0.65897 | vloss=0.54127 | entropy=-4.37773 | reward=0.18406
+[INFO]  epoch/step=95/17900 | loss=1.16453 | ploss=0.64540 | vloss=0.52289 | entropy=-4.37441 | reward=0.17656
+[INFO]  epoch/step=95/18000 | loss=1.19513 | ploss=0.66315 | vloss=0.53576 | entropy=-4.39384 | reward=0.18219
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_95.ckpt
+[INFO]  epoch/step=96/18100 | loss=1.19960 | ploss=0.65843 | vloss=0.54495 | entropy=-4.38964 | reward=0.18469
+[INFO]  epoch/step=96/18200 | loss=1.20918 | ploss=0.68181 | vloss=0.53116 | entropy=-4.40550 | reward=0.18063
+[INFO]  epoch/step=97/18300 | loss=1.19999 | ploss=0.67355 | vloss=0.53024 | entropy=-4.41765 | reward=0.17875
+[INFO]  epoch/step=97/18400 | loss=1.15535 | ploss=0.63903 | vloss=0.52014 | entropy=-4.43275 | reward=0.17688
+[INFO]  epoch/step=98/18500 | loss=1.23230 | ploss=0.69304 | vloss=0.54311 | entropy=-4.46009 | reward=0.18406
+[INFO]  epoch/step=98/18600 | loss=1.21832 | ploss=0.68177 | vloss=0.54035 | entropy=-4.41432 | reward=0.18375
+[INFO]  epoch/step=99/18700 | loss=1.13598 | ploss=0.62426 | vloss=0.51554 | entropy=-4.43468 | reward=0.17500
+[INFO]  epoch/step=99/18800 | loss=1.09910 | ploss=0.60021 | vloss=0.50268 | entropy=-4.39949 | reward=0.17031
+[INFO]  epoch/step=100/18900 | loss=1.14210 | ploss=0.62025 | vloss=0.52565 | entropy=-4.41945 | reward=0.17875
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_100.ckpt
+[INFO]  epoch/step=101/19000 | loss=1.20374 | ploss=0.66810 | vloss=0.53943 | entropy=-4.40262 | reward=0.18313
+[INFO]  epoch/step=101/19100 | loss=1.24901 | ploss=0.68297 | vloss=0.56976 | entropy=-4.33016 | reward=0.19375
+[INFO]  epoch/step=102/19200 | loss=1.27791 | ploss=0.71557 | vloss=0.56608 | entropy=-4.35666 | reward=0.19125
+[INFO]  epoch/step=102/19300 | loss=1.14314 | ploss=0.62676 | vloss=0.52014 | entropy=-4.37056 | reward=0.17688
+[INFO]  epoch/step=103/19400 | loss=1.16396 | ploss=0.64201 | vloss=0.52565 | entropy=-4.31454 | reward=0.17781
+[INFO]  epoch/step=103/19500 | loss=1.33620 | ploss=0.73711 | vloss=0.60284 | entropy=-4.37316 | reward=0.20500
+[INFO]  epoch/step=104/19600 | loss=1.13904 | ploss=0.62265 | vloss=0.52014 | entropy=-4.35653 | reward=0.17563
+[INFO]  epoch/step=104/19700 | loss=1.21244 | ploss=0.66387 | vloss=0.55230 | entropy=-4.34031 | reward=0.18781
+[INFO]  epoch/step=105/19800 | loss=1.16164 | ploss=0.62318 | vloss=0.54219 | entropy=-4.34100 | reward=0.18375
+[INFO]  epoch/step=105/19900 | loss=1.20880 | ploss=0.65746 | vloss=0.55506 | entropy=-4.32624 | reward=0.18875
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_105.ckpt
+[INFO]  epoch/step=106/20000 | loss=1.26291 | ploss=0.69136 | vloss=0.57527 | entropy=-4.33723 | reward=0.19437
+[INFO]  epoch/step=106/20100 | loss=1.18959 | ploss=0.65846 | vloss=0.53484 | entropy=-4.32503 | reward=0.18188
+[INFO]  epoch/step=107/20200 | loss=1.17888 | ploss=0.63028 | vloss=0.55230 | entropy=-4.31875 | reward=0.18688
+[INFO]  epoch/step=107/20300 | loss=1.21670 | ploss=0.66349 | vloss=0.55689 | entropy=-4.30063 | reward=0.18937
+[INFO]  epoch/step=108/20400 | loss=1.16418 | ploss=0.62935 | vloss=0.53851 | entropy=-4.29252 | reward=0.18250
+[INFO]  epoch/step=109/20500 | loss=1.18865 | ploss=0.64648 | vloss=0.54587 | entropy=-4.31152 | reward=0.18438
+[INFO]  epoch/step=109/20600 | loss=1.26383 | ploss=0.68299 | vloss=0.58446 | entropy=-4.23735 | reward=0.19875
+[INFO]  epoch/step=110/20700 | loss=1.24285 | ploss=0.67950 | vloss=0.56700 | entropy=-4.27323 | reward=0.19187
+[INFO]  epoch/step=110/20800 | loss=1.19042 | ploss=0.64083 | vloss=0.55322 | entropy=-4.24755 | reward=0.18812
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_110.ckpt
+[INFO]  epoch/step=111/20900 | loss=1.23338 | ploss=0.66820 | vloss=0.56884 | entropy=-4.27214 | reward=0.19250
+[INFO]  epoch/step=111/21000 | loss=1.20809 | ploss=0.65761 | vloss=0.55414 | entropy=-4.27221 | reward=0.18844
+[INFO]  epoch/step=112/21100 | loss=1.24486 | ploss=0.66956 | vloss=0.57895 | entropy=-4.26869 | reward=0.19500
+[INFO]  epoch/step=112/21200 | loss=1.28828 | ploss=0.68358 | vloss=0.60836 | entropy=-4.27035 | reward=0.20688
+[INFO]  epoch/step=113/21300 | loss=1.21337 | ploss=0.65090 | vloss=0.56608 | entropy=-4.22223 | reward=0.19125
+[INFO]  epoch/step=113/21400 | loss=1.20384 | ploss=0.63401 | vloss=0.57344 | entropy=-4.22296 | reward=0.19500
+[INFO]  epoch/step=114/21500 | loss=1.22290 | ploss=0.66595 | vloss=0.56057 | entropy=-4.23049 | reward=0.18875
+[INFO]  epoch/step=114/21600 | loss=1.26039 | ploss=0.68327 | vloss=0.58079 | entropy=-4.27959 | reward=0.19750
+[INFO]  epoch/step=115/21700 | loss=1.17612 | ploss=0.63392 | vloss=0.54587 | entropy=-4.28026 | reward=0.18469
+[INFO]  epoch/step=115/21800 | loss=1.15601 | ploss=0.62667 | vloss=0.53300 | entropy=-4.26793 | reward=0.18125
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_115.ckpt
+[INFO]  epoch/step=116/21900 | loss=1.24566 | ploss=0.67772 | vloss=0.57160 | entropy=-4.27649 | reward=0.19344
+[INFO]  epoch/step=117/22000 | loss=1.27701 | ploss=0.68609 | vloss=0.59457 | entropy=-4.27154 | reward=0.20125
+[INFO]  epoch/step=117/22100 | loss=1.18868 | ploss=0.64930 | vloss=0.54311 | entropy=-4.33804 | reward=0.18469
+[INFO]  epoch/step=118/22200 | loss=1.37379 | ploss=0.75811 | vloss=0.61938 | entropy=-4.31751 | reward=0.20969
+[INFO]  epoch/step=118/22300 | loss=1.25629 | ploss=0.67824 | vloss=0.58171 | entropy=-4.27004 | reward=0.19781
+[INFO]  epoch/step=119/22400 | loss=1.27425 | ploss=0.68974 | vloss=0.58814 | entropy=-4.24223 | reward=0.19906
+[INFO]  epoch/step=119/22500 | loss=1.28127 | ploss=0.69679 | vloss=0.58814 | entropy=-4.27511 | reward=0.20000
+[INFO]  epoch/step=120/22600 | loss=1.21038 | ploss=0.65716 | vloss=0.55689 | entropy=-4.29162 | reward=0.18906
+[INFO]  epoch/step=120/22700 | loss=1.24256 | ploss=0.67461 | vloss=0.57160 | entropy=-4.25775 | reward=0.19437
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_120.ckpt
+[INFO]  epoch/step=121/22800 | loss=1.26057 | ploss=0.67883 | vloss=0.58538 | entropy=-4.25728 | reward=0.19812
+[INFO]  epoch/step=121/22900 | loss=1.21493 | ploss=0.65525 | vloss=0.56333 | entropy=-4.26818 | reward=0.19156
+[INFO]  epoch/step=122/23000 | loss=1.28762 | ploss=0.69947 | vloss=0.59182 | entropy=-4.27647 | reward=0.20062
+[INFO]  epoch/step=122/23100 | loss=1.28947 | ploss=0.68291 | vloss=0.61019 | entropy=-4.24845 | reward=0.20750
+[INFO]  epoch/step=123/23200 | loss=1.27809 | ploss=0.68162 | vloss=0.60009 | entropy=-4.22891 | reward=0.20281
+[INFO]  epoch/step=123/23300 | loss=1.23655 | ploss=0.65659 | vloss=0.58354 | entropy=-4.19481 | reward=0.19844
+[INFO]  epoch/step=124/23400 | loss=1.22711 | ploss=0.65635 | vloss=0.57435 | entropy=-4.21347 | reward=0.19344
+[INFO]  epoch/step=124/23500 | loss=1.39802 | ploss=0.75374 | vloss=0.64787 | entropy=-4.21084 | reward=0.21937
+[INFO]  epoch/step=125/23600 | loss=1.24435 | ploss=0.65337 | vloss=0.59457 | entropy=-4.20970 | reward=0.20219
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_125.ckpt
+[INFO]  epoch/step=126/23700 | loss=1.30030 | ploss=0.68727 | vloss=0.61663 | entropy=-4.21021 | reward=0.20906
+[INFO]  epoch/step=126/23800 | loss=1.32233 | ploss=0.71117 | vloss=0.61479 | entropy=-4.24654 | reward=0.20906
+[INFO]  epoch/step=127/23900 | loss=1.25256 | ploss=0.66344 | vloss=0.59273 | entropy=-4.23418 | reward=0.20000
+[INFO]  epoch/step=127/24000 | loss=1.25764 | ploss=0.67405 | vloss=0.58722 | entropy=-4.24794 | reward=0.19969
+[INFO]  epoch/step=128/24100 | loss=1.36161 | ploss=0.73114 | vloss=0.63409 | entropy=-4.23055 | reward=0.21563
+[INFO]  epoch/step=128/24200 | loss=1.32293 | ploss=0.70903 | vloss=0.61755 | entropy=-4.26231 | reward=0.21000
+[INFO]  epoch/step=129/24300 | loss=1.26823 | ploss=0.67172 | vloss=0.60009 | entropy=-4.18933 | reward=0.20312
+[INFO]  epoch/step=129/24400 | loss=1.32598 | ploss=0.71201 | vloss=0.61755 | entropy=-4.19508 | reward=0.21000
+[INFO]  epoch/step=130/24500 | loss=1.36014 | ploss=0.72317 | vloss=0.64052 | entropy=-4.17314 | reward=0.21688
+[INFO]  epoch/step=130/24600 | loss=1.26694 | ploss=0.67871 | vloss=0.59182 | entropy=-4.20838 | reward=0.20125
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_130.ckpt
+[INFO]  epoch/step=131/24700 | loss=1.34339 | ploss=0.70826 | vloss=0.63868 | entropy=-4.16777 | reward=0.21625
+[INFO]  epoch/step=131/24800 | loss=1.28281 | ploss=0.68266 | vloss=0.60376 | entropy=-4.22479 | reward=0.20531
+[INFO]  epoch/step=132/24900 | loss=1.31301 | ploss=0.70911 | vloss=0.60744 | entropy=-4.16066 | reward=0.20531
+[INFO]  epoch/step=132/25000 | loss=1.30835 | ploss=0.70635 | vloss=0.60560 | entropy=-4.21477 | reward=0.20594
+[INFO]  epoch/step=133/25100 | loss=1.38464 | ploss=0.74311 | vloss=0.64512 | entropy=-4.19692 | reward=0.21875
+[INFO]  epoch/step=134/25200 | loss=1.39390 | ploss=0.74041 | vloss=0.65706 | entropy=-4.18918 | reward=0.22312
+[INFO]  epoch/step=134/25300 | loss=1.32399 | ploss=0.68609 | vloss=0.64144 | entropy=-4.15475 | reward=0.21813
+[INFO]  epoch/step=135/25400 | loss=1.31104 | ploss=0.69063 | vloss=0.62398 | entropy=-4.18734 | reward=0.21125
+[INFO]  epoch/step=135/25500 | loss=1.23491 | ploss=0.64383 | vloss=0.59457 | entropy=-4.10863 | reward=0.20219
+[INFO]  Save model to ../sv_model/amazon-book_20core/lstm/ba32lstm_3002e-04_sveb32_kge1_g_aiu_0_0_6000/policy_model_epoch_135.ckpt
+[INFO]  epoch/step=136/25600 | loss=1.34673 | ploss=0.70328 | vloss=0.64695 | entropy=-4.12047 | reward=0.21875
+[INFO]  epoch/step=136/25700 | loss=1.24564 | ploss=0.65464 | vloss=0.59457 | entropy=-4.18703 | reward=0.20219

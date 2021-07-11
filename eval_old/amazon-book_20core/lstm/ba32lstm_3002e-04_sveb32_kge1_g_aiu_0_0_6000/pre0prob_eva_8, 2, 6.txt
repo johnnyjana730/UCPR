@@ -1,0 +1,17 @@
+Epoch = 135, top_k = 10 sort by prob8, 2, 6
+NDCG=7.580 |  Recall=6.392 | HR=33.725 | Precision=5.689 | Invalid users=0 | cum_k=24
+total_pro_num = 50732 len(total_pre_user_num) = 5957 avg product num = 8.516367298975995
+total user num = 5957 total total_pre_user_num num  = 5957
+Epoch = 135, top_k = 20 sort by prob8, 2, 6
+NDCG=8.023 |  Recall=7.729 | HR=38.375 | Precision=5.318 | Invalid users=0 | cum_k=24
+total_pro_num = 70973 len(total_pre_user_num) = 5957 avg product num = 11.91421856639248
+total user num = 5957 total total_pre_user_num num  = 5957
+Epoch = 135, top_k = 25 sort by prob8, 2, 6
+NDCG=8.056 |  Recall=7.810 | HR=38.560 | Precision=5.289 | Invalid users=0 | cum_k=24
+total_pro_num = 73323 len(total_pre_user_num) = 5957 avg product num = 12.308712439147222
+total user num = 5957 total total_pre_user_num num  = 5957
+Epoch = 135, top_k = 50 sort by prob8, 2, 6
+NDCG=8.072 |  Recall=7.859 | HR=38.677 | Precision=5.275 | Invalid users=0 | cum_k=24
+total_pro_num = 74542 len(total_pre_user_num) = 5957 avg product num = 12.513345643780426
+total user num = 5957 total total_pre_user_num num  = 5957
+**************************************************
