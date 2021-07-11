@@ -22,7 +22,7 @@ todo
   - `amazon-book_20core/`
   - `last-fm_50core/`
   - `music/`
-- `src/model/`: implementation of KBHP.
+- `src/model/`: implementation of UCPR.
 - `output/`: storing log files
 - `misc/`: storing users being evaluating, popular items, and sharing embeddings.
 
