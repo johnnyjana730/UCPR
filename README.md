@@ -18,12 +18,13 @@ todo
 ## Files in the folder
 
 - `data/`: datasets
-  - `MovieLens-1M/`
   - `amazon-book_20core/`
-  - `last-fm_50core/`
-  - `music/`
+  - `Amazon_Beauty_Core/`
+  - `Amazon_Cellphones_Core/`
+  - `Amazon_Clothing_Core/`
+  - `MovieLens-1M_Core/`
 - `src/model/`: implementation of UCPR.
-- `output/`: storing log files
+- `eval/`: storing log files
 - `misc/`: storing users being evaluating, popular items, and sharing embeddings.
 
 ## Environment Requirement
