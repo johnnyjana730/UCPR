@@ -12,7 +12,7 @@ https://drive.google.com/file/d/1sJ18jvwhaEB-UACbWFNQ8vUZfvixgqC2/view?usp=shari
 
 
 ## Introduction
-we propose UCPR, a user-centric path reasoning network that constantly guides the search from the aspect of user demand and enables explainable recommendations. 
+We propose UCPR, a user-centric path reasoning network that constantly guides the search from the aspect of user demand and enables explainable recommendations. 
 
 ## Citation 
 If you want to use our codes and datasets in your research, please cite:
