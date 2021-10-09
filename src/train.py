@@ -1,7 +1,6 @@
 from __future__ import absolute_import, division, print_function
 
 import sys
-sys.path.insert(0,'/home/johnnyjana730/github/UCPR/')
 import os
 import argparse
 from collections import namedtuple
